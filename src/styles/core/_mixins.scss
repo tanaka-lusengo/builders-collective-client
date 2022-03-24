@@ -1,0 +1,61 @@
+// @use "./variables" as *;
+
+// Breakpoints
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+// fonts
+// @mixin font-source($size, $lh, $weight) {
+//   font-family: "Avenir", Helvetica, sans-serif;
+//   font-size: $size;
+//   line-height: $lh;
+//   font-weight: $weight;
+// }
+
+// flex-box
+@mixin flex($justify, $align, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+// height-width
+@mixin height-width($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+// max-height-width
+@mixin max-height-width($height, $width) {
+  max-height: $height;
+  max-width: $width;
+}
+
+// avatar-image user profile
+// @mixin background-image-avatar($image) {
+//   background-image: $image;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-color: $secondary-3;
+//   border-radius: 50%;
+// }
+
+// avatar-image past user input
+// @mixin background-image-avatar-anon($color) {
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-color: $color;
+//   border-radius: 50%;
+// }
+
+// --------------------------------------------------
