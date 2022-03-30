@@ -1,0 +1,49 @@
+@use "../../styles/core/mixins" as *;
+@use "../../styles/core/typography" as *;
+@use "../../styles/core/variables" as *;
+
+.header {
+  margin: 0 auto;
+  background-color: $primaryCream;
+
+  &__logo {
+    color: black;
+  }
+
+  &__layer {
+    margin: 0 120px;
+    // max-width: 1280px;
+    padding: 50px 0;
+    @include flex(space-between, center);
+  }
+
+  &__nav {
+    @include flex(null, center);
+  }
+
+  &__nav-list-container {
+    @include flex(null, center);
+  }
+
+  &__nav-list-item {
+    margin-left: 30px;
+    color: black;
+
+    &--active {
+      color: $primaryAccent;
+    }
+
+    &:hover {
+      color: $primaryAccent;
+    }
+  }
+
+  &__register-login-container {
+    @include flex(null, center);
+    margin-left: 100px;
+  }
+
+  &__register-container {
+    margin-right: 30px;
+  }
+}

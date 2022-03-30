@@ -1,0 +1,55 @@
+@use "../../styles/core/mixins" as *;
+@use "../../styles/core/typography" as *;
+@use "../../styles/core/variables" as *;
+
+.jobsList {
+  background-color: $secondaryCream;
+  border-bottom: 1px solid $primaryCream;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 2px;
+
+  &__job-title-employer-container {
+    margin-bottom: 15px;
+  }
+
+  &__job-title-apply-container {
+    @include flex(space-between, center);
+
+    &:hover {
+      color: $primaryCream;
+      cursor: pointer;
+    }
+  }
+
+  &__job-title {
+    margin-bottom: 10px;
+  }
+
+  &__apply {
+    width: 150px;
+    color: $primaryText;
+
+    &:hover {
+      color: $primaryCream;
+      cursor: pointer;
+    }
+  }
+
+  &__job-summary-container {
+    @include flex(space-between, center);
+    margin-bottom: 10px;
+  }
+
+  &__job-title {
+    @include font-source(null, 300);
+  }
+
+  &__description-title {
+    margin-bottom: 10px;
+  }
+
+  &__item {
+    width: 150px;
+  }
+}

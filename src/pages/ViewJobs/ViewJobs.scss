@@ -1,0 +1,30 @@
+@use "../../styles/core/mixins" as *;
+@use "../../styles/core/typography" as *;
+@use "../../styles/core/variables" as *;
+
+.viewJobs {
+  margin: 0 auto;
+  background-color: $primaryCream;
+  overflow: auto;
+
+  &__layer {
+    margin: 0 120px;
+  }
+
+  &__main-content-container {
+    display: flex;
+  }
+
+  &__left {
+    flex-basis: 30%;
+    margin-right: 30px;
+  }
+
+  &__right {
+    flex-basis: 70%;
+  }
+
+  &__loading {
+    @include flex(center, center);
+  }
+}
