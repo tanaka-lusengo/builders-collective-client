@@ -1,4 +1,6 @@
 // Resets & Global Styles
+@use "./styles/core/typography" as *;
+@use "./styles/core/mixins" as *;
 *,
 *::before,
 *::after {
@@ -16,5 +18,24 @@ li {
 html,
 body {
   margin: 0;
-  // font-family: "Avenir-Next", Helvetica, sans-serif;
+  font-family: "Founders_Grotesk", sans-serif;
+  color: #0d0d0d;
+}
+
+// default - desktop & tablet
+
+h1 {
+  @include font-source(1.5625rem, 700); // Page Header
+}
+
+h2 {
+  @include font-source(26px, 600); // Section Header
+}
+
+h3 {
+  @include font-source(18px, 400); // Sub-Header
+}
+
+p {
+  @include font-source(0.875rem, 400); // Body
 }

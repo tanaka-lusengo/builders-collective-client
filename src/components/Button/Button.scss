@@ -1,0 +1,26 @@
+@use "../../styles/core/mixins" as *;
+@use "../../styles/core/variables" as *;
+
+.button {
+  &__button {
+    background: none;
+    border: none;
+    outline: none;
+    @include flex(center, center);
+    @include height-width(2.5rem, 100%); // 40px
+    background-color: $primaryCream;
+    border: 0.0625rem solid $secondaryCream;
+    border-radius: 20px; // 4px
+    padding: 20px; // 10px
+
+    &:hover {
+      // background-color: $primaryCream;
+      border-color: $primaryAccent;
+      cursor: pointer;
+    }
+  }
+
+  &__button-filter {
+    width: 130px;
+  }
+}

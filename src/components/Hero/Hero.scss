@@ -1,0 +1,26 @@
+@use "../../styles/core/mixins" as *;
+@use "../../styles/core/typography" as *;
+@use "../../styles/core/variables" as *;
+
+.hero {
+  margin: 0 auto;
+
+  &__layer {
+    @include flex(space-between, center);
+    height: 40vh;
+  }
+
+  &__text-left,
+  &__text-right {
+    @include font-source(null, 300);
+  }
+
+  &__text-right {
+    width: 400px;
+    margin-right: 100px;
+  }
+
+  &__number {
+    font-size: 30px;
+  }
+}

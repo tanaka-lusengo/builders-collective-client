@@ -1,0 +1,33 @@
+@use "../../styles/core/mixins" as *;
+@use "../../styles/core/typography" as *;
+@use "../../styles/core/variables" as *;
+
+.filter {
+  position: fixed;
+  position: relative;
+
+  &__form-label {
+    @include font-source(18px, 300);
+    // padding-left: 2px;
+  }
+
+  &__form-label-location {
+    padding-left: 4px;
+  }
+
+  &__form-input {
+    @include font-source(15px, 300);
+    background: none;
+    outline: none;
+    border: none;
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $primaryAccent;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+
+  &__form-input-job {
+    margin-bottom: 20px;
+  }
+}
