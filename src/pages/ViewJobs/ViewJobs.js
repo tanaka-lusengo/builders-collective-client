@@ -16,14 +16,14 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 export default function ViewJobs() {
   const [allJobs, setAllJobs] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
+  // const [pageNumber, setPageNumber] = useState(1);
 
   // get all jobs from database
   const getAllJobs = async () => {
     const response = await axios({
       method: "GET",
       url: GET_ALL_JOBS,
-      params: { page: pageNumber },
+      // params: { page: pageNumber },
     });
 
     setAllJobs(response.data);
@@ -47,7 +47,7 @@ export default function ViewJobs() {
 
   useEffect(() => {
     getAllJobs();
-  }, [pageNumber]);
+  }, []);
 
   // safeguard function for when data has not been fetched from api
   const customStyling = css`
@@ -85,47 +85,3 @@ export default function ViewJobs() {
     </section>
   );
 }
-
-// function to filter jobs by title
-// const onFilterSubmission = () => {
-//   const jobTitles = [
-//     "Architect",
-//     "Site Manager",
-//     "Quantity Surveyor",
-//     "Electrician",
-//     "Plumbing",
-//     "Air Conditioning Engineer",
-//     "Bricklayer",
-//     "Carpenter",
-//   ];
-// switch statement to filter database depending on job title clicked
-//   switch (jobTitles) {
-//     case jobTitles[0]:
-//       getJobsByTitle(jobTitles[0]);
-//       break;
-//     case jobTitles[1]:
-//       getJobsByTitle(jobTitles[1]);
-//       break;
-//     case jobTitles[2]:
-//       getJobsByTitle(jobTitles[2]);
-//       break;
-//     case jobTitles[3]:
-//       getJobsByTitle(jobTitles[3]);
-//       break;
-//     case jobTitles[4]:
-//       getJobsByTitle(jobTitles[4]);
-//       break;
-//     case jobTitles[5]:
-//       getJobsByTitle(jobTitles[5]);
-//       break;
-//     case jobTitles[6]:
-//       getJobsByTitle(jobTitles[6]);
-//       break;
-//     case jobTitles[7]:
-//       getJobsByTitle(jobTitles[7]);
-//       break;
-//     default:
-//       getAllJobs();
-//       break;
-//   }
-// };

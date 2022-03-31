@@ -1,0 +1,10 @@
+@use "../../styles/core/mixins" as *;
+@use "../../styles/core/typography" as *;
+@use "../../styles/core/variables" as *;
+
+.community-feed {
+  &__layer {
+    margin: 0 120px;
+    display: flex;
+  }
+}

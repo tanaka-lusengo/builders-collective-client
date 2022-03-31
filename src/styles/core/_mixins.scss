@@ -1,4 +1,4 @@
-// @use "./variables" as *;
+@use "./variables" as *;
 
 // Breakpoints
 @mixin tablet {
@@ -41,13 +41,13 @@
 }
 
 // avatar-image user profile
-// @mixin background-image-avatar($image) {
-//   background-image: $image;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   background-color: $secondary-3;
-//   border-radius: 50%;
-// }
+@mixin background-image-avatar($image) {
+  background-image: $image;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $secondaryCream;
+  border-radius: 50%;
+}
 
 // avatar-image past user input
 // @mixin background-image-avatar-anon($color) {
