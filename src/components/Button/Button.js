@@ -13,4 +13,12 @@ const ButtonFilter = ({ buttonName }) => {
   );
 };
 
-export { Button, ButtonFilter };
+const ButtonShare = ({ buttonName }) => {
+  return (
+    <button className="button__button button__button-share">
+      {buttonName}
+    </button>
+  );
+};
+
+export { Button, ButtonFilter, ButtonShare };

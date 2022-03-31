@@ -5,6 +5,9 @@
 .header {
   margin: 0 auto;
   background-color: $primaryCream;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 
   &__logo {
     color: black;
@@ -30,12 +33,28 @@
     color: black;
 
     &--active {
-      color: $primaryAccent;
+      color: $secondaryCream;
     }
 
     &:hover {
-      color: $primaryAccent;
+      color: $secondaryCream;
     }
+  }
+
+  &__nav-list-item-icon {
+    position: relative;
+  }
+
+  &__icon-badge {
+    @include flex(center, center);
+    @include height-width(15px, 15px);
+    background-color: $notification;
+    color: $notificationText;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 12px;
   }
 
   &__register-login-container {

@@ -3,8 +3,8 @@
 @use "../../styles/core/variables" as *;
 
 .filter {
-  position: fixed;
-  position: relative;
+  top: 150px;
+  position: sticky;
 
   &__form-label {
     @include font-source(18px, 300);

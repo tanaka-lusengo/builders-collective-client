@@ -1,0 +1,14 @@
+@use "../../styles/core/mixins" as *;
+@use "../../styles/core/typography" as *;
+@use "../../styles/core/variables" as *;
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  @include height-width(2.25rem, 2.25rem); // 36px
+
+  &__feed {
+    @include height-width(45px, 45px); // 36px
+    margin-bottom: 20px;
+  }
+}

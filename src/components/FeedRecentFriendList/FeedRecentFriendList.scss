@@ -1,0 +1,32 @@
+@use "../../styles/core/mixins" as *;
+@use "../../styles/core/typography" as *;
+@use "../../styles/core/variables" as *;
+
+.recent {
+  @include flex(start, center);
+
+  &__friend-item-container {
+    position: relative;
+  }
+
+  &__friend-img {
+    border-radius: 50%;
+    object-fit: cover;
+    @include height-width(40px, 40px); // 36px
+    margin: 5px 10px;
+  }
+
+  &__friend-online {
+    @include height-width(12px, 12px);
+    background-color: limegreen;
+    position: absolute;
+    border-radius: 50%;
+    top: 5px;
+    right: 10px;
+    border: 2px solid whitesmoke;
+  }
+
+  &__friend-name {
+    margin-left: 15px;
+  }
+}

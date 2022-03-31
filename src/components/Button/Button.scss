@@ -9,18 +9,26 @@
     @include flex(center, center);
     @include height-width(2.5rem, 100%); // 40px
     background-color: $primaryCream;
-    border: 0.0625rem solid $secondaryCream;
+    border: 0.0625rem solid $primaryAccent;
     border-radius: 20px; // 4px
     padding: 20px; // 10px
 
     &:hover {
-      // background-color: $primaryCream;
-      border-color: $primaryAccent;
+      border-color: $secondaryCream;
       cursor: pointer;
     }
   }
 
   &__button-filter {
     width: 130px;
+  }
+
+  &__button-share {
+    width: 0;
+    border: none;
+
+    &:hover {
+      color: $secondaryCream;
+    }
   }
 }
