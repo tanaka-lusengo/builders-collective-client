@@ -21,4 +21,12 @@ const ButtonShare = ({ buttonName }) => {
   );
 };
 
-export { Button, ButtonFilter, ButtonShare };
+const ButtonRegisterLogin = ({ buttonName }) => {
+  return (
+    <button className="button__button button__button-register-login">
+      {buttonName}
+    </button>
+  );
+};
+
+export { Button, ButtonFilter, ButtonShare, ButtonRegisterLogin };

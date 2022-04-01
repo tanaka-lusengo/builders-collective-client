@@ -1,0 +1,48 @@
+@use "../../styles/core/mixins" as *;
+@use "../../styles/core/typography" as *;
+@use "../../styles/core/variables" as *;
+
+.login {
+  margin-top: 20px;
+
+  &__layer {
+    margin: 0 auto;
+    background-color: whitesmoke;
+    box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
+    height: 550px;
+    width: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  &__title {
+    justify-content: flex-start;
+  }
+
+  &__content-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  &__label {
+    @include font-source(12px, 300);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin: 5px 0;
+  }
+
+  &__input {
+    @include font-source(15px, 300);
+    background: none;
+    outline: none;
+    border: none;
+    width: 100%;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $secondaryAccent;
+    cursor: pointer;
+  }
+}
