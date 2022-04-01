@@ -26,6 +26,10 @@
     border: 2px solid whitesmoke;
   }
 
+  &__friend-name-container {
+    @include flex(start, start, column);
+  }
+
   &__friend-name {
     margin-left: 15px;
   }

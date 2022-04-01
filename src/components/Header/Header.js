@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.scss";
 import { Button } from "../Button/Button";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 // import PersonIcon from "@mui/icons-material/Person";
 import ChatIcon from "@mui/icons-material/Chat";
 import { AvatarHeader } from "../Avatar/Avatar";
@@ -44,7 +44,7 @@ export default function Header() {
               }
             >
               <ChatIcon />
-              <span className="header__icon-badge">3</span>
+              <p className="header__icon-badge"></p>
             </NavLink>
             <NavLink
               to="/profile"
@@ -58,10 +58,14 @@ export default function Header() {
           </ul>
           <div className="header__register-login-container">
             <div className="header__register-container">
-              <Button buttonName="Register" />
+              <Link to="/register">
+                <Button buttonName="Register" />
+              </Link>
             </div>
             <div className="header__login-container">
-              <Button buttonName="Login" />
+              <Link to="/login">
+                <Button buttonName="Login" />
+              </Link>
             </div>
           </div>
         </nav>

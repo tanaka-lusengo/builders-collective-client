@@ -31,4 +31,13 @@
       color: $secondaryCream;
     }
   }
+
+  &__button-register-login {
+    margin-top: 10px;
+    border: none;
+
+    &:hover {
+      background-color: $secondaryCream;
+    }
+  }
 }

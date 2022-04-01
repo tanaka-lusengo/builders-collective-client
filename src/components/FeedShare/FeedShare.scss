@@ -9,7 +9,8 @@
 
   &__top-container {
     @include flex(center, center);
-    margin: 0 20px;
+    margin: 15px 20px;
+    height: 80px;
   }
 
   &__avatar {

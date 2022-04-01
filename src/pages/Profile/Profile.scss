@@ -1,0 +1,46 @@
+@use "../../styles/core/mixins" as *;
+@use "../../styles/core/typography" as *;
+@use "../../styles/core/variables" as *;
+
+.profile {
+  &__layer {
+    margin: 10px 120px;
+    display: flex;
+  }
+
+  &__left {
+    flex-basis: 25%;
+  }
+
+  &__right {
+    // background-color: whitesmoke;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    flex-basis: 75%;
+  }
+
+  &__cover {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  &__img {
+    border-radius: 50%;
+    object-fit: cover;
+    @include height-width(150px, 150px); // 36px
+    margin-top: -100px;
+    margin-right: 350px;
+    border: 5px solid whitesmoke;
+  }
+
+  &__name-job {
+    margin-top: -50px;
+  }
+
+  &__info {
+    text-align: left;
+  }
+}

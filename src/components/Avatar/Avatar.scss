@@ -8,7 +8,7 @@
   @include height-width(2.25rem, 2.25rem); // 36px
 
   &__feed {
-    @include height-width(45px, 45px); // 36px
-    margin-bottom: 20px;
+    @include height-width(65px, 65px); // 36px
+    margin-bottom: 15px;
   }
 }
