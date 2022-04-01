@@ -13,9 +13,10 @@ export default function FeedRecentFriendList({ user }) {
           />
           <span className="recent__friend-online"></span>
         </div>
-        <p className="recent__friend-name">
-          {user.username} <br />-{user.jobTitle}
-        </p>
+        <div className="recent__friend-name-container">
+          <p className="recent__friend-name">{user.username}</p>
+          <p className="recent__friend-name">-{user.jobTitle}</p>
+        </div>
       </li>
     </>
   );

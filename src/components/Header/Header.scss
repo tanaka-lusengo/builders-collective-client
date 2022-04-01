@@ -43,10 +43,10 @@
 
   &__nav-list-item-icon {
     position: relative;
+    display: flex;
   }
 
   &__icon-badge {
-    @include flex(center, center);
     @include height-width(15px, 15px);
     background-color: $notification;
     color: $notificationText;

@@ -10,6 +10,7 @@ import "./ViewJobs.scss";
 import Hero from "../../components/Hero/Hero";
 import Filter from "../../components/Filter/Filter";
 import JobsList from "../../components/JobsList/JobsList";
+import { handlePageScroll } from "../../utilities/helper";
 import { v4 as uuidv4 } from "uuid";
 import { css } from "@emotion/react";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -43,6 +44,7 @@ export default function ViewJobs() {
       const response = await axios.get(GET_JOBS_BY_TITLE(jobTitle, location));
       setAllJobs(response.data);
     }
+    handlePageScroll();
   };
 
   useEffect(() => {
@@ -50,7 +52,7 @@ export default function ViewJobs() {
   }, []);
 
   // safeguard function for when data has not been fetched from api
-  const customStyling = css`
+  const ringLoaderStyling = css`
     display: block;
     margin: 0 auto;
     border-color: #cc8d81;
@@ -59,7 +61,7 @@ export default function ViewJobs() {
   if (!allJobs) {
     return (
       <div className="viewJobs__loading">
-        <ClipLoader css={customStyling} size={100} />
+        <ClipLoader css={ringLoaderStyling} size={100} />
       </div>
     );
   }
