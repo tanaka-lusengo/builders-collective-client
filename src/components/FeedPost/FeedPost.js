@@ -1,15 +1,23 @@
 import React, { useState } from "react";
 import "./FeedPost.scss";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import { Timestamp } from "../../utilities/helper";
+import { PUBLIC_URL } from "../../api/endpoints";
 
 export default function FeedPost({ post, users }) {
   // like button functionality
-  const [likes, setLikes] = useState(post.likes);
+  const [likes, setLikes] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
 
   const likeHandler = () => {
     isLiked ? setLikes(likes - 1) : setLikes(likes + 1);
     isLiked === false ? setIsLiked(true) : setIsLiked(false);
+  };
+
+  const matchUserName = (userId, postId) => {
+    return userId === postId
+      ? users.firstName + " " + users.lastName
+      : "New User";
   };
 
   return (
@@ -18,18 +26,22 @@ export default function FeedPost({ post, users }) {
         <div className="feed-post__top-container-name-avatar">
           <img
             className="feed-post__avatar"
-            src={users.find((user) => user.id === post.userId).profilePicture}
-            alt="profile image"
+            src={PUBLIC_URL + "default-profile.png"}
+            alt="profile"
           />
-          <p>{users.find((user) => user.id === post.userId).username}</p>
+          <p>{matchUserName(users._id, post.userId)}</p>
         </div>
-        <p>Posted: {post.date}</p>
+        <p>Posted: {Timestamp(post.createdAt)}</p>
       </div>
 
       <div className="feed-post__middle-container">
         <div className="feed-post__middle-container-content">
-          <img className="feed-post__img" src={post.image} alt={post.name} />
-          <p className="feed-post__text">{post.description}</p>
+          <img
+            className="feed-post__img"
+            src={PUBLIC_URL + post.image}
+            alt="post"
+          />
+          <p className="feed-post__text">{post.content}</p>
         </div>
       </div>
 
@@ -44,3 +56,5 @@ export default function FeedPost({ post, users }) {
     </section>
   );
 }
+
+// users.profilePicture? users.profilePicture:

@@ -4,6 +4,7 @@ import "./FeedProfile.scss";
 import { v4 as uuidv4 } from "uuid";
 import FeedRecentFriendList from "../FeedRecentFriendList/FeedRecentFriendList";
 import { Link, useHistory } from "react-router-dom";
+import { PUBLIC_URL } from "../../api/endpoints";
 
 export default function FeedProfile({ ProfileImg, CoverImg, Users }) {
   const history = useHistory();
@@ -21,7 +22,7 @@ export default function FeedProfile({ ProfileImg, CoverImg, Users }) {
           onClick={routeChange}
         />
         <Link to="/profile">
-          <AvatarFeed img={ProfileImg} />
+          <AvatarFeed img={PUBLIC_URL + "tanaka.jpg"} />
         </Link>
         <h3 className="profile__name">Tanaka Lusengo</h3>
         <p className="profile__job-title">Quantity Surveyor</p>
