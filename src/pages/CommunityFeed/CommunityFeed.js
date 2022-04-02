@@ -9,8 +9,8 @@ import { Users } from "../../data/dummyUsers";
 import ProfileImg from "../../assets/images/profile-pics/Tanaka.jpg";
 import CoverImg from "../../assets/images/cover-image/building-1.jpg";
 import PostImg from "../../assets/images/post-images/post-1.jpg";
+import { GET_ALL_POSTS, POST_CREATE } from "../../api/endpoints";
 import { v4 as uuid4 } from "uuid";
-import { GET_ALL_POSTS, POST_CREATE, PUBLIC_URL } from "../../api/endpoints";
 import axios from "axios";
 
 export default function CommunityFeed() {
