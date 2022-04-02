@@ -1,5 +1,6 @@
 import React from "react";
 import "./FeedRecentFriendList.scss";
+import { PUBLIC_URL } from "../../api/endpoints";
 
 export default function FeedRecentFriendList({ user }) {
   return (
@@ -8,7 +9,11 @@ export default function FeedRecentFriendList({ user }) {
         <div className="recent__friend-item-container">
           <img
             className="recent__friend-img"
-            src={user.profilePicture}
+            src={
+              user.profilePicture
+                ? user.profilePicture
+                : PUBLIC_URL + "default-profile.png"
+            }
             alt="friend profile image"
           />
           <span className="recent__friend-online"></span>

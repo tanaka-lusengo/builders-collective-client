@@ -7,4 +7,8 @@
     margin: 0 120px;
     display: flex;
   }
+
+  &__loading {
+    @include flex(center, center);
+  }
 }
