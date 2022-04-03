@@ -1,12 +1,24 @@
-import Post1 from "../assets/images/post-images/post-1.jpg";
-import Post2 from "../assets/images/post-images/post-2.jpg";
+export const Users = [
+  {
+    id: 1,
+    profilePicture: "clem-onojeghuo.jpg",
+    username: "Clem Onojeghuo",
+    jobTitle: "Architect",
+  },
+  {
+    id: 2,
+    profilePicture: "greg-rosenke.jpg",
+    username: "Greg Rosenke",
+    jobTitle: "Quantity Surveyor",
+  },
+];
 
 export const Posts = [
   {
     id: 1,
     description:
       "Amazing progress on site, cannot wait for the end product! Do get in touch if you would like work, we're hiring!",
-    image: Post1,
+    image: "post-1.jpg",
     date: "3 days ago",
     userId: 1,
     likes: 10,
@@ -14,7 +26,7 @@ export const Posts = [
   {
     id: 2,
     description: "Check out this cool build!",
-    image: Post2,
+    image: "post-2.jpg",
     date: "5 days ago",
     userId: 2,
     likes: 3,

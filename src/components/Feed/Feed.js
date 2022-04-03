@@ -3,29 +3,35 @@ import "./Feed.scss";
 import FeedShare from "../FeedShare/FeedShare";
 import FeedPost from "../FeedPost/FeedPost";
 import { useState, useEffect } from "react";
-import { v4 as uuid4 } from "uuid";
-import { GET_ALL_USERS } from "../../api/endpoints";
-import { sortByTimestamp } from "../../utilities/helper";
+import {
+  GET_TIMELINE_POSTS,
+  GET_USER_TIMELINE_POSTS,
+} from "../../api/endpoints";
 import axios from "axios";
+import { sortByTimestamp } from "../../utilities/helper";
+import { v4 as uuid4 } from "uuid";
 
-export default function Feed({ ProfileImg, posts, handlePostSubmit }) {
-  const [users, setUsers] = useState([]);
+export default function Feed({ username }) {
+  const [posts, setPosts] = useState([]);
 
-  const getAllUsers = async () => {
-    const response = await axios.get(GET_ALL_USERS);
-    setUsers(response.data);
+  // getting data from Posts Model in database
+  const getTimelinePosts = async () => {
+    const response = username
+      ? await axios.get(GET_USER_TIMELINE_POSTS(username))
+      : await axios.get(GET_TIMELINE_POSTS("62474139601d0de468c2eeac")); // Clem Onojeghuo id
+    setPosts(response.data);
   };
 
   useEffect(() => {
-    getAllUsers();
-  }, []);
+    getTimelinePosts();
+  }, [username]);
 
   return (
     <section className="feed">
-      <FeedShare ProfileImg={ProfileImg} handlePostSubmit={handlePostSubmit} />
-      {posts.sort(sortByTimestamp).map((post, i) => {
-        console.log(users[i]);
-        return <FeedPost key={uuid4()} post={post} users={users} />;
+      {/* ProfileImg={ProfileImg} handlePostSubmit={handlePostSubmit} */}
+      <FeedShare />
+      {posts.sort(sortByTimestamp).map((post) => {
+        return <FeedPost key={uuid4()} post={post} />;
       })}
     </section>
   );
