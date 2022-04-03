@@ -1,0 +1,127 @@
+@use "../../styles/core/mixins" as *;
+@use "../../styles/core/typography" as *;
+@use "../../styles/core/variables" as *;
+
+.network-chat {
+  margin-top: 50px;
+  overflow: hidden;
+
+  &__layer {
+    background-color: whitesmoke;
+    box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 800px;
+    height: 450px;
+  }
+
+  &__layer-content {
+    padding: 15px 20px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__header {
+    @include flex(space-between, center);
+    padding-bottom: 10px;
+    border-bottom: 1px solid $secondaryAccent;
+    flex-basis: 20%;
+  }
+
+  &__close-container {
+    @include flex(center, center);
+    &:hover {
+      color: $notification;
+      cursor: pointer;
+    }
+  }
+
+  &__leave {
+    color: $primaryAccent;
+    font-weight: 600;
+    margin-top: 3px;
+  }
+
+  &__main {
+    @include flex(null, start);
+    flex-basis: 80%;
+  }
+
+  &__sidebar {
+    overflow-y: scroll;
+    width: 200px;
+  }
+
+  &__comments {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  &__room-name {
+    margin-bottom: 20px;
+  }
+
+  &__room-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  &__users-title {
+    margin-top: 7px;
+    margin-left: 5px;
+  }
+
+  &__chat-messages-container {
+    max-height: 330px;
+    width: 600px;
+    overflow-y: scroll;
+  }
+
+  &__messages-container-scroll {
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  &__messages {
+    background-color: $primaryCream;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    width: fit-content;
+
+    &--other {
+      background-color: $secondaryCream;
+    }
+  }
+
+  &__time {
+    margin-top: -10px;
+    margin-left: 10px;
+    font-size: 12px;
+  }
+
+  &__form-container {
+    @include flex(null, end);
+    flex-basis: 10%;
+  }
+
+  &__form-input {
+    width: 100%;
+    height: 30px;
+    padding: 12px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
+    z-index: 9999;
+  }
+
+  &__form-send {
+    margin-top: 15px;
+    margin-left: 5px;
+  }
+}
