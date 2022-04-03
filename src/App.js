@@ -19,7 +19,7 @@ function App() {
         <Route path="/community-feed" component={CommunityFeed} />
         <Route path="/my-network" exact component={MyNetwork} />
         <Route path="/my-network/chat" component={MyNetworkChat} />
-        <Route path="/profile" component={Profile} />
+        <Route path="/profile/:username" component={Profile} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
       </Switch>

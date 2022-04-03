@@ -2,10 +2,9 @@ import React from "react";
 import "./Header.scss";
 import { Button } from "../Button/Button";
 import { Link, NavLink } from "react-router-dom";
-// import PersonIcon from "@mui/icons-material/Person";
 import ChatIcon from "@mui/icons-material/Chat";
 import { AvatarHeader } from "../Avatar/Avatar";
-import ProfileImg from "../../assets/images/profile-pics/Tanaka.jpg";
+import { PUBLIC_URL } from "../../api/endpoints";
 
 export default function Header() {
   return (
@@ -47,13 +46,13 @@ export default function Header() {
               <p className="header__icon-badge"></p>
             </NavLink>
             <NavLink
-              to="/profile"
+              to="/profile/:username"
               className={(isActive) =>
                 "header__nav-list-item header__nav-list-item" +
                 (!isActive ? "" : "--active")
               }
             >
-              <AvatarHeader img={ProfileImg} />
+              <AvatarHeader img={PUBLIC_URL + "temp-profile.jpg"} />
             </NavLink>
           </ul>
           <div className="header__register-login-container">

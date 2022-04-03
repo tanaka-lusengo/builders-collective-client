@@ -1,0 +1,30 @@
+@use "../../styles/core/mixins" as *;
+@use "../../styles/core/typography" as *;
+@use "../../styles/core/variables" as *;
+
+.news-article {
+  flex-basis: 25%;
+  margin: 15px 0;
+  top: 150px;
+  position: sticky;
+
+  &__main-title {
+    margin-bottom: 15px;
+  }
+
+  &__container {
+    margin-left: 5px;
+  }
+  &__list-item {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__date {
+    font-weight: 700;
+  }
+}

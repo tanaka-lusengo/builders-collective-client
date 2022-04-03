@@ -1,19 +1,15 @@
 import React from "react";
-import "./FeedRecentFriendList.scss";
+import "./RecentConnections.scss";
 import { PUBLIC_URL } from "../../api/endpoints";
 
-export default function FeedRecentFriendList({ user }) {
+export default function RecentConnections({ user }) {
   return (
     <>
       <li className="recent">
         <div className="recent__friend-item-container">
           <img
             className="recent__friend-img"
-            src={
-              user.profilePicture
-                ? user.profilePicture
-                : PUBLIC_URL + "default-profile.png"
-            }
+            src={PUBLIC_URL + user.profilePicture}
             alt="friend profile image"
           />
           <span className="recent__friend-online"></span>
