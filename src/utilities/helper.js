@@ -9,6 +9,12 @@ const Timestamp = (unixTimestamp) => {
   return m;
 };
 
+const TimestampChat = (unixTimestamp) => {
+  let date = new Date(unixTimestamp);
+  let m = moment(date, "DD-MM-YYYY").calendar();
+  return m;
+};
+
 // Notification function for UploadPage
 // const handleUploadComplete = () => {
 //   const swalCustom = Swal.mixin({
@@ -45,4 +51,18 @@ const handlePageScroll = () => {
   });
 };
 
-export { handlePageScroll, Timestamp, sortByTimestamp };
+// scroll to bottom page after side video click
+const handlePageScrollBottom = () => {
+  window.scroll({
+    top: 100,
+    behavior: "smooth",
+  });
+};
+
+export {
+  handlePageScroll,
+  handlePageScrollBottom,
+  Timestamp,
+  TimestampChat,
+  sortByTimestamp,
+};

@@ -29,4 +29,21 @@ const ButtonRegisterLogin = ({ buttonName }) => {
   );
 };
 
-export { Button, ButtonFilter, ButtonShare, ButtonRegisterLogin };
+const ButtonMessaging = ({ buttonName, joinRoom }) => {
+  return (
+    <button
+      className="button__button button__button-messaging"
+      onClick={joinRoom}
+    >
+      {buttonName}
+    </button>
+  );
+};
+
+export {
+  Button,
+  ButtonFilter,
+  ButtonShare,
+  ButtonRegisterLogin,
+  ButtonMessaging,
+};

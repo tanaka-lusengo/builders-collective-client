@@ -1,10 +1,9 @@
 import React from "react";
 import "./MyNetwork.scss";
-import { Link, useRouteMatch } from "react-router-dom";
-import io from "socket.io-client";
 import { useState } from "react";
 import MyNetworkChat from "../../components/MyNetworkChat/MyNetworkChat";
-
+import { ButtonMessaging } from "../../components/Button/Button";
+import io from "socket.io-client";
 const socket = io.connect("http://localhost:3001");
 
 export default function MyNetwork() {
@@ -12,16 +11,6 @@ export default function MyNetwork() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
-
-  // function to get events for state
-  // const handleRoomChoice = (e) => {
-  //   e.preventDefault();
-  //   let form = e.target;
-  //   const usernameVal = form.username.value;
-  //   const roomVal = form.room.value;
-  //   setUsername(usernameVal);
-  //   setRoom(roomVal);
-  // };
 
   // socket connection function
   const joinRoom = () => {
@@ -31,100 +20,64 @@ export default function MyNetwork() {
     }
   };
 
-  let { url } = useRouteMatch();
   return (
     <>
       {!showChat ? (
-        <section className="join-container">
-          <header className="join-header">
-            <h1 className="fas fa-smile">My Network Chat</h1>
-          </header>
-          <main className="join-main">
-            {/* <form onSubmit={handleRoomChoice}> */}
-            <div className="form-control">
-              <label htmlFor="username">Username</label>
-              <input
-                type="text"
-                name="username"
-                placeholder="Enter username..."
-                autoComplete="off"
-                required
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </div>
-            <div className="form-control">
-              <label htmlFor="room">Room</label>
-              <select
-                name="room"
-                required
-                onChange={(e) => setRoom(e.target.value)}
-              >
-                <option value="">Please Enter Room:</option>
-                <option value="Architect">Architect</option>
-                <option value="Site Manager">Construction/ Site Manager</option>
-                <option value="Quantity Surveyor">Quantity Surveyor</option>
-              </select>
-            </div>
-            {/* <Link
-            to={{
-              pathname: `${url}/chat`,
-              state: {
-                username: username,
-                room,
-                room,
-              },
-              data: socket,
-            }}
-            to={`${url}/chat`}
-          > */}
-            <button className="btn" onClick={joinRoom}>
-              Join Chat
-            </button>
-            {/* </Link> */}
-            {/* </form> */}
-          </main>
+        <section className="my-network">
+          <div className="my-network__layer">
+            <main className="my-network__content">
+              <header className="my-network__header">
+                <h1 className="fmy-network__title">Networking Chatrooms</h1>
+              </header>
+              <div className="my-network__form-container">
+                <label className="my-network__form-label" htmlFor="username">
+                  Username
+                </label>
+                <input
+                  className="my-network__form-input"
+                  type="text"
+                  name="username"
+                  placeholder="Enter Username..."
+                  autoComplete="off"
+                  required
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+              </div>
+              <div className="my-network__form-container">
+                <label className="my-network__form-label" htmlFor="room">
+                  Room
+                </label>
+                <select
+                  className="my-network__form-input"
+                  name="room"
+                  required
+                  onChange={(e) => setRoom(e.target.value)}
+                >
+                  <option value="">Please Enter Room:</option>
+                  <option value="Architect">Architect's Lounge</option>
+                  <option value="Site Manager">
+                    Construction/ Project Manager's Lounge
+                  </option>
+                  <option value="Quantity Surveyor">
+                    Commercial Management's Lounge
+                  </option>
+                  <option value="Skilled Trades">
+                    Skilled Trades's Lounge
+                  </option>
+                </select>
+              </div>
+              <ButtonMessaging buttonName="Join Lounge" joinRoom={joinRoom} />
+            </main>
+          </div>
         </section>
       ) : (
-        <MyNetworkChat socket={socket} username={username} room={room} />
+        <MyNetworkChat
+          socket={socket}
+          username={username}
+          room={room}
+          setShowChat={setShowChat}
+        />
       )}
     </>
   );
-}
-
-{
-  /* <section class="my-network">
-<header class="my-network__header">
-  <h1 class="my-network__header-title">My Network Chat</h1>
-</header>
-<main class="my-network__join-main">
-  <form action="chat.html">
-    <div class="my-network__form-control">
-      <label class="my-network__form-label" for="username">
-        Enter Username
-      </label>
-      <input
-        class="my-network__form-input"
-        type="text"
-        name="username"
-        placeholder="Enter username..."
-        required
-      />
-    </div>
-    <div class="my-network__form-control">
-      <label class="my-network__form-label" for="room">
-        Room
-      </label>
-      <select class="my-network__form-input" name="room" id="room">
-        <option value="Architect">Architects</option>
-        <option value="Site Manager">Construction/ Site Managers</option>
-        <option value="Quantity Surveyor">Quantity Surveyors</option>
-        <option value="M&E">M&E</option>
-      </select>
-    </div>
-    <button type="submit" class="btn">
-      Join Chat
-    </button>
-  </form>
-</main>
-</section> */
 }
