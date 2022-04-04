@@ -57,7 +57,7 @@ export default function FeedShare({ getTimelinePosts }) {
             type="text"
             name="content"
             placeholder={`What would you like to share... ${user.firstName} ?`}
-            autocomplete="false"
+            autoComplete="false"
             ref={content}
           />
         </div>

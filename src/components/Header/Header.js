@@ -12,6 +12,16 @@ export default function Header() {
   const { user } = useContext(AuthContext);
   console.log(user);
 
+  // const userLoggedIn = user ? true : false;
+
+  let navLink = "";
+  let avatarImg = PUBLIC_URL + "default-profile.png";
+
+  if (user) {
+    navLink = `/profile/${user.username}`;
+    avatarImg = PUBLIC_URL + user.profilePicture;
+  }
+
   return (
     <header className="header">
       <section className="header__layer">
@@ -50,20 +60,14 @@ export default function Header() {
               <ChatIcon />
               <p className="header__icon-badge"></p>
             </NavLink>
-            <NavLink
-              to={`/profile/${user ? user.username : ""}`}
-              // to={`/profile/`}
-              className="header__nav-list-item header__nav-list-item"
-            >
-              <AvatarHeader
-                // img={PUBLIC_URL + "default-profile.png"}
-                img={
-                  user.profilePicture
-                    ? PUBLIC_URL + user.profilePicture
-                    : PUBLIC_URL + "default-profile.png"
-                }
-              />
-            </NavLink>
+            {user && (
+              <NavLink
+                to={navLink}
+                className="header__nav-list-item header__nav-list-item"
+              >
+                <AvatarHeader img={avatarImg} />
+              </NavLink>
+            )}
           </ul>
           <div className="header__register-login-container">
             <div className="header__register-container">
