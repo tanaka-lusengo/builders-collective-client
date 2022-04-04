@@ -8,20 +8,40 @@ import MyNetworkChat from "./components/MyNetworkChat/MyNetworkChat";
 import Profile from "./pages/Profile/Profile";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
+import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
 
 function App() {
+  const { user } = useContext(AuthContext);
   return (
     <div className="App">
       <Header />
       <Switch>
         <Redirect from="/view-jobs" to="/" />
+
         <Route path="/" exact component={ViewJobs} />
-        <Route path="/community-feed" component={CommunityFeed} />
-        <Route path="/my-network" exact component={MyNetwork} />
+
+        <Route path="/community-feed">
+          {user ? <CommunityFeed /> : <Redirect to="/register" />}
+        </Route>
+
+        <Route path="/my-network" exact>
+          {user ? <MyNetwork /> : <Redirect to="/register" />}
+        </Route>
+
         <Route path="/my-network/chat" component={MyNetworkChat} />
-        <Route path="/profile/:username" component={Profile} />
-        <Route path="/register" component={Register} />
-        <Route path="/login" component={Login} />
+
+        <Route path="/profile/:username">
+          {user ? <Profile /> : <Redirect to="/register" />}
+        </Route>
+
+        <Route path="/register">
+          {user ? <Redirect to="/community-feed" /> : <Register />}
+        </Route>
+
+        <Route path="/login">
+          {user ? <Redirect to="/community-feed" /> : <Login />}
+        </Route>
       </Switch>
     </div>
   );

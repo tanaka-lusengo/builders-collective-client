@@ -36,6 +36,10 @@
       color: $secondaryCream;
     }
 
+    &--inactive {
+      display: none;
+    }
+
     &:hover {
       color: $secondaryCream;
     }
