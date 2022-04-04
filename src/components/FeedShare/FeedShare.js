@@ -5,11 +5,14 @@ import PresentToAllOutlinedIcon from "@mui/icons-material/PresentToAllOutlined";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import { ButtonShare } from "../Button/Button";
 import { PUBLIC_URL } from "../../api/endpoints";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 // import { v4 as uuid4 } from "uuid";
 // import { POST_CREATE, GET_ALL_POSTS } from "../../api/endpoints";
 // import axios from "axios";
 
-export default function FeedShare({}) {
+export default function FeedShare() {
+  const { user } = useContext(AuthContext);
   return (
     <section className="feed-share">
       {/* onSubmit={handlePostSubmit} */}
@@ -17,8 +20,12 @@ export default function FeedShare({}) {
         <div className="feed-share__top-container">
           <img
             className="feed-share__avatar"
-            src={PUBLIC_URL + "temp-profile.jpg"}
-            alt="profil"
+            src={
+              user.profilePicture
+                ? PUBLIC_URL + user.profilePicture
+                : PUBLIC_URL + "default-profile.png"
+            }
+            alt="profile"
           />
           <input
             className="feed-share__input"

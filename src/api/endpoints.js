@@ -22,7 +22,13 @@ export const GET_TIMELINE_POSTS = (userId) =>
 export const GET_USER_TIMELINE_POSTS = (username) =>
   `${API_URL}/post/profile/${username}`;
 
-export const POST_CREATE = `${API_URL}/post`;
+export const POST_SHARE = `${API_URL}/post`;
+
+export const POST_LIKES = (id) => `${API_URL}/post/${id}/like`;
+
+export const POST_USER_LOGIN = `${API_URL}/login`;
+
+export const POST_USER_REGISTER = `${API_URL}/register`;
 
 // database user routes
 export const GET_USERS_BY_ID = (userId) => `${API_URL}/user${userId}`;

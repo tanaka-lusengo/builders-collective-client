@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./FeedPost.scss";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import { Timestamp } from "../../utilities/helper";
-import { PUBLIC_URL, GET_USERS_BY_ID } from "../../api/endpoints";
+import { PUBLIC_URL, GET_USERS_BY_ID, POST_LIKES } from "../../api/endpoints";
+import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 
 export default function FeedPost({ post }) {
@@ -11,11 +12,22 @@ export default function FeedPost({ post }) {
   const [likes, setLikes] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
   const [user, setUser] = useState({});
+  const { user: currentUser } = useContext(AuthContext);
 
   const likeHandler = () => {
+    try {
+      axios.put(POST_LIKES(post._id), { userId: currentUser._id });
+    } catch (err) {
+      console.log("likeHandler error -->", err);
+    }
     isLiked ? setLikes(likes - 1) : setLikes(likes + 1);
     isLiked === false ? setIsLiked(true) : setIsLiked(false);
   };
+
+  // making sure to only send like if the likes we send are included in the other users array
+  useEffect(() => {
+    setIsLiked(post.likes.includes(currentUser._id));
+  }, [currentUser._id, post.likes]);
 
   // getting data from Users Model in database
   const getUser = async () => {
@@ -34,7 +46,11 @@ export default function FeedPost({ post }) {
           <Link to={`/profile/${user.username}`}>
             <img
               className="feed-post__avatar"
-              src={user.profilePicture || PUBLIC_URL + "default-profile.png"}
+              src={
+                user.profilePicture
+                  ? PUBLIC_URL + user.profilePicture
+                  : PUBLIC_URL + "default-profile.png"
+              }
               alt="profile"
             />
           </Link>

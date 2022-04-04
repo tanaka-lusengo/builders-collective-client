@@ -7,6 +7,7 @@ import {
   GET_JOBS_BY_TITLE_LOCATION,
 } from "../../api/endpoints";
 import "./ViewJobs.scss";
+import Header from "../../components/Header/Header";
 import Hero from "../../components/Hero/Hero";
 import Filter from "../../components/Filter/Filter";
 import JobsList from "../../components/JobsList/JobsList";

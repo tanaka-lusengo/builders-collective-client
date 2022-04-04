@@ -5,8 +5,13 @@ import { Link, NavLink } from "react-router-dom";
 import ChatIcon from "@mui/icons-material/Chat";
 import { AvatarHeader } from "../Avatar/Avatar";
 import { PUBLIC_URL } from "../../api/endpoints";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Header() {
+  const { user } = useContext(AuthContext);
+  console.log(user);
+
   return (
     <header className="header">
       <section className="header__layer">
@@ -46,13 +51,17 @@ export default function Header() {
               <p className="header__icon-badge"></p>
             </NavLink>
             <NavLink
-              to="/profile/:username"
-              className={(isActive) =>
-                "header__nav-list-item header__nav-list-item" +
-                (!isActive ? "" : "--active")
-              }
+              //come back to sort
+              to={`/profile/${user.username}`}
+              className="header__nav-list-item header__nav-list-item"
             >
-              <AvatarHeader img={PUBLIC_URL + "temp-profile.jpg"} />
+              <AvatarHeader
+                img={
+                  user.profilePicture
+                    ? PUBLIC_URL + user.profilePicture
+                    : PUBLIC_URL + "default-profile.png"
+                }
+              />
             </NavLink>
           </ul>
           <div className="header__register-login-container">

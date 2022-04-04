@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useContext, useRef } from "react";
 import "./Login.scss";
 import { ButtonRegisterLogin } from "../../components/Button/Button";
+import { loginCall } from "../../api/apiCalls";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Login() {
+  const email = useRef();
+  const password = useRef();
+  const { dispatch } = useContext(AuthContext);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    loginCall(
+      { email: email.current.value, password: password.current.value },
+      dispatch
+    );
+  };
+
   return (
     <div className="login">
       <div className="login__layer">
         <h1 className="login__title">Login</h1>
-        <form className="login__form">
+        <form className="login__form" onSubmit={handleLogin}>
           {/* email */}
           <div className="login__content-container">
             <label className="login__label" htmlFor="email">
@@ -16,9 +30,11 @@ export default function Login() {
 
             <input
               className="login__input"
-              type="text"
+              type="email"
               name="email"
               placeholder="Email"
+              ref={email}
+              required
             />
           </div>
           {/* password */}
@@ -29,9 +45,12 @@ export default function Login() {
 
             <input
               className="login__input"
-              type="text"
+              type="password"
               name="password"
               placeholder="Password"
+              ref={password}
+              minLength={8}
+              required
             />
           </div>
           {/* submit button */}

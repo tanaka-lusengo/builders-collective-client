@@ -37,12 +37,20 @@ export default function Profile() {
         <div className="profile__right">
           <img
             className="profile__cover"
-            src={user.coverPicture || PUBLIC_URL + "default-cover.jpg"}
+            src={
+              user.coverPicture
+                ? PUBLIC_URL + user.coverPicture
+                : PUBLIC_URL + "default-cover.jpg"
+            }
             alt="cover"
           />
           <img
             className="profile__img"
-            src={user.profilePicture || PUBLIC_URL + "default-profile.png"}
+            src={
+              user.profilePicture
+                ? PUBLIC_URL + user.profilePicture
+                : PUBLIC_URL + "default-profile.png"
+            }
             alt="profile picture"
           />
           <div className="profile__name-job">
