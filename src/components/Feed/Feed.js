@@ -31,7 +31,7 @@ export default function Feed({ username }) {
   return (
     <section className="feed">
       {/* ProfileImg={ProfileImg} handlePostSubmit={handlePostSubmit} */}
-      <FeedShare />
+      <FeedShare getTimelinePosts={getTimelinePosts} />
       {posts.sort(sortByTimestamp).map((post) => {
         return <FeedPost key={uuid4()} post={post} />;
       })}

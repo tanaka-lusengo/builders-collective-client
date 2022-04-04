@@ -51,11 +51,12 @@ export default function Header() {
               <p className="header__icon-badge"></p>
             </NavLink>
             <NavLink
-              //come back to sort
-              to={`/profile/${user.username}`}
+              to={`/profile/${user ? user.username : ""}`}
+              // to={`/profile/`}
               className="header__nav-list-item header__nav-list-item"
             >
               <AvatarHeader
+                // img={PUBLIC_URL + "default-profile.png"}
                 img={
                   user.profilePicture
                     ? PUBLIC_URL + user.profilePicture
