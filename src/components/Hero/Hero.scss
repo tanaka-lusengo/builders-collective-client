@@ -7,7 +7,7 @@
 
   &__layer {
     @include flex(space-between, center);
-    height: 40vh;
+    height: 35vh;
   }
 
   &__text-left,
@@ -16,11 +16,11 @@
   }
 
   &__text-right {
-    width: 400px;
-    margin-right: 100px;
+    width: 25rem;
+    margin-right: 6.25rem;
   }
 
   &__number {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 }

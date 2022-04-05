@@ -3,12 +3,12 @@
 @use "../../styles/core/variables" as *;
 
 .avatar {
+  @include height-width(2.25rem, 2.25rem);
   border-radius: 50%;
   object-fit: cover;
-  @include height-width(2.25rem, 2.25rem); // 36px
 
   &__feed {
-    @include height-width(65px, 65px); // 36px
+    @include height-width(4.0625rem, 4.0625rem);
     margin-bottom: 15px;
   }
 }

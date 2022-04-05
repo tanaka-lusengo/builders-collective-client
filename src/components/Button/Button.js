@@ -21,6 +21,14 @@ const ButtonShare = ({ buttonName }) => {
   );
 };
 
+const ButtonHeader = ({ buttonName }) => {
+  return (
+    <button className="button__button button__button-header">
+      {buttonName}
+    </button>
+  );
+};
+
 const ButtonRegisterLogin = ({ buttonName }) => {
   return (
     <button className="button__button button__button-register-login">
@@ -44,6 +52,7 @@ export {
   Button,
   ButtonFilter,
   ButtonShare,
+  ButtonHeader,
   ButtonRegisterLogin,
   ButtonMessaging,
 };

@@ -4,13 +4,13 @@
 
 .jobsList {
   background-color: $secondaryCream;
-  border-bottom: 1px solid $primaryCream;
-  border-radius: 5px;
-  padding: 20px;
-  margin-bottom: 2px;
+  border-bottom: 0.0625rem solid $primaryCream;
+  border-radius: 0.3125rem;
+  padding: 1.25rem;
+  margin-bottom: 0.125rem;
 
   &__job-title-employer-container {
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;
   }
 
   &__job-title-apply-container {
@@ -23,11 +23,11 @@
   }
 
   &__job-title {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   &__apply {
-    width: 150px;
+    width: 9.375rem;
     color: $primaryText;
 
     &:hover {
@@ -38,7 +38,7 @@
 
   &__job-summary-container {
     @include flex(space-between, center);
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
   }
 
   &__job-title {
@@ -46,10 +46,10 @@
   }
 
   &__description-title {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
   }
 
   &__item {
-    width: 150px;
+    width: 9.375rem;
   }
 }

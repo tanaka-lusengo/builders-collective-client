@@ -8,33 +8,29 @@ import { Link } from "react-router-dom";
 import { PUBLIC_URL } from "../../api/endpoints";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-
-//----------DummyData
-import { Users } from "../../dummyData";
+import { Users } from "../../data/dummyUsers";
 
 export default function FeedProfile() {
   const { user } = useContext(AuthContext);
+
+  let coverImg = PUBLIC_URL + "default-cover.jpeg";
+  let avatarImg = PUBLIC_URL + "default-profile.png";
+
+  if (user) {
+    coverImg = PUBLIC_URL + user.coverPicture;
+    avatarImg = PUBLIC_URL + user.profilePicture;
+  }
 
   return (
     <section className="profile">
       <div className="profile__top">
         <img
           className="profile__cover-img"
-          src={
-            user.coverPicture
-              ? user.coverPicture
-              : PUBLIC_URL + "default-cover.jpg"
-          }
+          src={coverImg}
           alt="profile cover image"
         />
         <Link to={`/profile/${user.username}`}>
-          <AvatarFeed
-            img={
-              user.profilePicture
-                ? PUBLIC_URL + user.profilePicture
-                : PUBLIC_URL + "default-profile.png"
-            }
-          />
+          <AvatarFeed img={avatarImg} />
         </Link>
         <h3 className="profile__name">
           {user.firstName + " " + user.lastName}

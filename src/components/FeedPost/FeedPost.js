@@ -8,12 +8,15 @@ import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 
 export default function FeedPost({ post }) {
-  // like button functionality
+  //like states
   const [likes, setLikes] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
+
+  // user states
   const [user, setUser] = useState({});
   const { user: currentUser } = useContext(AuthContext);
 
+  // like button functionality
   const likeHandler = () => {
     try {
       axios.put(POST_LIKES(post._id), { userId: currentUser._id });
@@ -21,15 +24,14 @@ export default function FeedPost({ post }) {
       console.log("likeHandler error -->", err);
     }
     isLiked ? setLikes(likes - 1) : setLikes(likes + 1);
-    isLiked === false ? setIsLiked(true) : setIsLiked(false);
+    !isLiked ? setIsLiked(true) : setIsLiked(false);
   };
 
-  // making sure to only send like if the likes we send are included in the other users array
+  // updating db and setting condition to not update if it's our own post
   useEffect(() => {
     setIsLiked(post.likes.includes(currentUser._id));
   }, [currentUser._id, post.likes]);
 
-  // getting data from Users Model in database
   const getUser = async () => {
     const response = await axios.get(GET_USERS_BY_ID(`?userId=${post.userId}`));
     setUser(response.data);
@@ -39,20 +41,18 @@ export default function FeedPost({ post }) {
     getUser();
   }, [post.userId]);
 
+  let avatarImg = PUBLIC_URL + "default-profile.png";
+
+  if (user) {
+    avatarImg = PUBLIC_URL + user.profilePicture;
+  }
+
   return (
     <section className="feed-post">
       <div className="feed-post__top-container">
         <div className="feed-post__top-container-name-avatar">
           <Link to={`/profile/${user.username}`}>
-            <img
-              className="feed-post__avatar"
-              src={
-                user.profilePicture
-                  ? PUBLIC_URL + user.profilePicture
-                  : PUBLIC_URL + "default-profile.png"
-              }
-              alt="profile"
-            />
+            <img className="feed-post__avatar" src={avatarImg} alt="profile" />
           </Link>
           <p>{user.firstName + " " + user.lastName}</p>
         </div>
@@ -81,5 +81,3 @@ export default function FeedPost({ post }) {
     </section>
   );
 }
-
-// users.profilePicture? users.profilePicture:

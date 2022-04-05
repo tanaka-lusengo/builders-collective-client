@@ -1,18 +1,14 @@
-import React from "react";
-import "./Header.scss";
-import { Button } from "../Button/Button";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import "./Header.scss";
+import { ButtonHeader } from "../Button/Button";
 import ChatIcon from "@mui/icons-material/Chat";
 import { AvatarHeader } from "../Avatar/Avatar";
 import { PUBLIC_URL } from "../../api/endpoints";
-import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 export default function Header() {
   const { user } = useContext(AuthContext);
-  console.log(user);
-
-  // const userLoggedIn = user ? true : false;
 
   let navLink = "";
   let avatarImg = PUBLIC_URL + "default-profile.png";
@@ -72,12 +68,12 @@ export default function Header() {
           <div className="header__register-login-container">
             <div className="header__register-container">
               <Link to="/register">
-                <Button buttonName="Register" />
+                <ButtonHeader buttonName="Register" />
               </Link>
             </div>
             <div className="header__login-container">
               <Link to="/login">
-                <Button buttonName="Login" />
+                <ButtonHeader buttonName="Login" />
               </Link>
             </div>
           </div>

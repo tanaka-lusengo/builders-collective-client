@@ -10,20 +10,20 @@
   }
 
   &__friend-img {
+    @include height-width(2.5rem, 2.5rem);
+    margin: 0.3125rem 0.625rem;
     border-radius: 50%;
     object-fit: cover;
-    @include height-width(40px, 40px); // 36px
-    margin: 5px 10px;
   }
 
   &__friend-online {
-    @include height-width(12px, 12px);
-    background-color: limegreen;
-    position: absolute;
+    @include height-width(0.75rem, 0.75rem);
+    border: 0.125rem solid whitesmoke;
     border-radius: 50%;
-    top: 5px;
-    right: 10px;
-    border: 2px solid whitesmoke;
+    top: 0.3125rem;
+    right: 0.625rem;
+    background-color: $online;
+    position: absolute;
   }
 
   &__friend-name-container {
@@ -31,6 +31,6 @@
   }
 
   &__friend-name {
-    margin-left: 15px;
+    margin-left: 0.9375rem;
   }
 }

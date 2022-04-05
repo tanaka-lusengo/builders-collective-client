@@ -3,14 +3,15 @@
 @use "../../styles/core/variables" as *;
 
 .feed-post {
-  border-radius: 10px;
   border: 1px solid $secondaryAccent;
   box-shadow: 0px 5px 5px 2px $notificationText;
-  margin: 20px 0;
+  border-radius: 0.625rem;
+  margin: 1.25rem 0;
 
+  // top section
   &__top-container {
     @include flex(space-between, center);
-    margin: 0 20px;
+    margin: 0 1.25rem;
   }
 
   &__top-container-name-avatar {
@@ -18,14 +19,13 @@
   }
 
   &__avatar {
+    @include height-width(2.25rem, 2.25rem);
     border-radius: 50%;
+    margin: 10px;
     object-fit: cover;
-    @include height-width(36px, 36px);
-    margin: 10px 10px;
   }
 
-  // middle
-
+  // middle section
   &___middle-container {
     @include flex(center, center);
     margin: 0 auto;
@@ -33,24 +33,23 @@
 
   &__middle-container-content {
     @include flex(center, center, column);
-    margin: 0 20px;
+    margin: 0 1.25rem;
   }
 
   &__img {
-    margin-top: 10px;
-    max-height: 300px;
+    margin-top: 0.625rem;
+    max-height: 18.75rem;
     object-fit: contain;
   }
 
   &__text {
-    margin: 20px 0;
+    margin: 1.25rem 0;
   }
 
-  // bottom
-
+  // bottom section
   &__like-container {
     @include flex(flex-end, center);
-    margin: 0 20px;
+    margin: 0 1.25rem;
   }
 
   &__like-icon {

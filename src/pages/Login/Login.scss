@@ -3,46 +3,46 @@
 @use "../../styles/core/variables" as *;
 
 .login {
-  margin-top: 20px;
+  margin-top: 1.25rem;
 
   &__layer {
     margin: 0 auto;
     background-color: whitesmoke;
     box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
-    height: 550px;
-    width: 400px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include height-width(21.875rem, 28.125rem);
+    @include flex(center, center, column);
   }
 
   &__title {
-    justify-content: flex-start;
+    margin-bottom: 1.25rem;
   }
 
   &__content-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    flex-direction: column;
+    @include flex(flex-end, flex-start, column);
   }
 
   &__label {
-    @include font-source(12px, 300);
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    margin: 5px 0;
+    @include font-source(0.75rem, 300);
+    @include flex(flex-end, flex-start);
+    margin: 0.3125rem 0;
   }
 
   &__input {
-    @include font-source(15px, 300);
-    background: none;
+    @include font-source(0.9375rem, 300);
     outline: none;
+    background: none;
     border: none;
-    width: 100%;
-    margin-bottom: 15px;
-    border-bottom: 1px solid $secondaryAccent;
+    border-bottom: 0.0625rem solid $secondaryAccent;
+    width: 21.875rem;
+    margin-bottom: 0.9375rem;
     cursor: pointer;
+
+    &:hover {
+      border-bottom: 0.0625rem solid $secondaryCream;
+    }
+
+    &:focus {
+      border-bottom: 0.0625rem solid $secondaryCream;
+    }
   }
 }

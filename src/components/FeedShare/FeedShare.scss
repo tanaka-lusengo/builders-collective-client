@@ -1,45 +1,44 @@
 @use "../../styles/core/mixins" as *;
-@use "../../styles/core/typography" as *;
 @use "../../styles/core/variables" as *;
 
 .feed-share {
-  border-radius: 10px;
-  background-color: $primaryCream;
+  border-radius: 0.625rem;
   box-shadow: 0px 5px 5px 2px $notificationText;
+  background-color: $primaryCream;
 
   &__top-container {
     @include flex(center, center);
-    margin: 15px 20px;
-    height: 80px;
+    margin: 0.9375rem 1.25rem;
+    height: 5rem;
   }
 
   &__avatar {
+    @include height-width(2.25rem, 2.25rem);
     border-radius: 50%;
+    margin: 10px;
     object-fit: cover;
-    @include height-width(36px, 36px);
-    margin: 10px 10px;
   }
 
   &__input {
-    @include height-width(36px, 100%);
+    @include height-width(2.25rem, 100%);
+    background-color: $primaryCream;
     border: none;
     outline: none;
-    background-color: $primaryCream;
   }
 
   &__divide {
     border-style: none;
-    border: 1px solid $secondaryAccent;
+    border: 0.0625rem solid $secondaryAccent;
   }
 
   &__bottom-container {
     @include flex(space-evenly, center);
-    padding: 5px 0;
+    padding: 0.3125rem 0;
   }
 
   &__share-container {
     @include flex(center, center);
-    margin-left: 5px;
+    margin-left: 0.3125rem;
   }
 
   &__input-file {
@@ -52,7 +51,8 @@
 
   &__share-job-project-text,
   &__share-photo-text {
-    margin: 5px 0 0 3px;
+    margin: 0.3125rem 0 0 0.1875rem;
+    transition: all 0.3s ease-out;
 
     &:hover {
       color: $secondaryCream;

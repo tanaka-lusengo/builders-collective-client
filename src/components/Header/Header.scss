@@ -4,20 +4,19 @@
 
 .header {
   margin: 0 auto;
-  background-color: $primaryCream;
-  position: sticky;
   top: 0;
   z-index: 999;
+  background-color: $primaryCream;
+  position: sticky;
 
   &__logo {
     color: black;
   }
 
   &__layer {
-    margin: 0 120px;
-    // max-width: 1280px;
-    padding: 50px 0;
     @include flex(space-between, center);
+    margin: 0 7.5rem;
+    padding: 3.125rem 0;
   }
 
   &__nav {
@@ -29,19 +28,25 @@
   }
 
   &__nav-list-item {
-    margin-left: 30px;
-    color: black;
+    margin-left: 1.875rem;
+    color: $primaryText;
 
     &--active {
       color: $secondaryCream;
     }
 
-    &--inactive {
-      display: none;
+    &:after {
+      display: block;
+      content: "";
+      border-bottom: solid 0.125rem $secondaryCream;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+      transform-origin: 50% 50%;
     }
 
-    &:hover {
-      color: $secondaryCream;
+    &:hover:after {
+      transform: scaleX(1);
+      transform-origin: 50% 50%;
     }
   }
 
@@ -51,22 +56,22 @@
   }
 
   &__icon-badge {
-    @include height-width(15px, 15px);
+    @include height-width(0.9375rem, 0.9375rem);
+    top: -0.3125rem;
+    right: -0.3125rem;
+    border-radius: 50%;
+    font-size: 0.75rem;
     background-color: $notification;
     color: $notificationText;
-    border-radius: 50%;
     position: absolute;
-    top: -5px;
-    right: -5px;
-    font-size: 12px;
   }
 
   &__register-login-container {
     @include flex(null, center);
-    margin-left: 100px;
+    margin-left: 6.25rem;
   }
 
   &__register-container {
-    margin-right: 30px;
+    margin-right: 1.875rem;
   }
 }
