@@ -1,6 +1,6 @@
 import moment from "moment";
-// import Swal from "sweetalert2";
-// import "sweetalert2/src/sweetalert2.scss";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 //Helper function to convert Unix Timestamps to required format
 const Timestamp = (unixTimestamp) => {
@@ -15,22 +15,17 @@ const TimestampChat = (unixTimestamp) => {
   return m;
 };
 
-// Notification function for UploadPage
-// const handleUploadComplete = () => {
-//   const swalCustom = Swal.mixin({
-//     customClass: {
-//       confirmButton: "sweet-alert-button",
-//     },
-//     buttonsStyling: false,
-//   });
-
-//   swalCustom.fire({
-//     title: "Sucess!",
-//     text: "Video has been uploaded!",
-//     icon: "success",
-//     confirmButtonText: "RETURN HOME",
-//   });
-// };
+// handle error
+const errorNotify = () =>
+  toast.error("Please check your email or password credentials", {
+    position: "top-center",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
 
 // sort comments in order by timestamp
 const sortByTimestamp = (a, b) => {
@@ -51,18 +46,10 @@ const handlePageScroll = () => {
   });
 };
 
-// scroll to bottom page after side video click
-const handlePageScrollBottom = () => {
-  window.scroll({
-    top: 100,
-    behavior: "smooth",
-  });
-};
-
 export {
   handlePageScroll,
-  handlePageScrollBottom,
   Timestamp,
   TimestampChat,
+  errorNotify,
   sortByTimestamp,
 };

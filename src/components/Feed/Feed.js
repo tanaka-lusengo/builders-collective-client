@@ -33,7 +33,14 @@ export default function Feed({ username }) {
     <section className="feed">
       <FeedShare getTimelinePosts={getTimelinePosts} />
       {posts.sort(sortByTimestamp).map((post) => {
-        return <FeedPost key={uuid4()} post={post} />;
+        return (
+          <FeedPost
+            key={uuid4()}
+            post={post}
+            posts={posts}
+            getTimelinePosts={getTimelinePosts}
+          />
+        );
       })}
     </section>
   );
