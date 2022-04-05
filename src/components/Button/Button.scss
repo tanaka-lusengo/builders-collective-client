@@ -3,15 +3,16 @@
 
 .button {
   &__button {
+    @include flex(center, center);
+    @include height-width(2.5rem, 100%);
+    border: 0.0625rem solid $primaryAccent;
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    background-color: $primaryCream;
     background: none;
     border: none;
     outline: none;
-    @include flex(center, center);
-    @include height-width(2.5rem, 100%); // 40px
-    background-color: $primaryCream;
-    border: 0.0625rem solid $primaryAccent;
-    border-radius: 20px; // 4px
-    padding: 20px; // 10px
+    transition: all 0.3s ease-out;
 
     &:hover {
       border-color: $secondaryCream;
@@ -20,7 +21,12 @@
   }
 
   &__button-filter {
-    width: 130px;
+    width: 8.125rem;
+    border: 0.0625rem solid $secondaryCream;
+
+    &:hover {
+      background-color: $secondaryCream;
+    }
   }
 
   &__button-share {
@@ -32,9 +38,18 @@
     }
   }
 
-  &__button-register-login {
-    margin-top: 10px;
-    border: none;
+  &__button-header {
+    border: 0.0625rem solid $secondaryCream;
+
+    &:hover {
+      background-color: $secondaryCream;
+      cursor: pointer;
+    }
+  }
+
+  &__button-register-login,
+  &__button-messaging {
+    margin-top: 0.625rem;
 
     &:hover {
       background-color: $secondaryCream;

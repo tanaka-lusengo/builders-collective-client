@@ -3,35 +3,33 @@
 @use "../../styles/core/variables" as *;
 
 .network-chat {
-  margin-top: 50px;
+  margin-top: 3.125rem;
   overflow: hidden;
 
   &__layer {
-    background-color: whitesmoke;
+    @include height-width(28.125rem, 40.625rem);
     box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
-    border-radius: 5px;
+    background-color: whitesmoke;
+    border-radius: 0.3125rem;
     margin: 0 auto;
-    width: 800px;
-    height: 450px;
   }
 
   &__layer-content {
-    padding: 15px 20px;
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex(space-between, null, column);
+    padding: 0.9375rem 1.25rem;
+    height: 28.125rem;
   }
 
   &__header {
     @include flex(space-between, center);
-    padding-bottom: 10px;
-    border-bottom: 1px solid $secondaryAccent;
+    border-bottom: 0.0625rem solid $secondaryAccent;
+    padding-bottom: 0.625rem;
     flex-basis: 20%;
   }
 
   &__close-container {
     @include flex(center, center);
+
     &:hover {
       color: $notification;
       cursor: pointer;
@@ -41,7 +39,7 @@
   &__leave {
     color: $primaryAccent;
     font-weight: 600;
-    margin-top: 3px;
+    margin-top: 0.1875rem;
   }
 
   &__main {
@@ -50,34 +48,30 @@
   }
 
   &__sidebar {
-    overflow-y: scroll;
-    width: 200px;
+    width: 12.5rem;
   }
 
   &__comments {
-    margin: 10px 0;
+    margin: 0.625rem 0;
     text-align: center;
   }
 
   &__room-name {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 
   &__room-title-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
+    @include flex(center, center);
+    margin-bottom: 0.9375rem;
   }
 
   &__users-title {
-    margin-top: 7px;
-    margin-left: 5px;
+    margin: 0.4375rem 0 0 0.3125rem;
   }
 
   &__chat-messages-container {
-    max-height: 330px;
-    width: 600px;
+    max-height: 20.625rem;
+    width: 31.25rem;
     overflow-y: scroll;
   }
 
@@ -88,9 +82,9 @@
 
   &__messages {
     background-color: $primaryCream;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px 0;
+    border-radius: 0.625rem;
+    padding: 0.625rem;
+    margin: 0.625rem 0;
     width: fit-content;
 
     &--other {
@@ -99,9 +93,8 @@
   }
 
   &__time {
-    margin-top: -10px;
-    margin-left: 10px;
-    font-size: 12px;
+    margin: -0.625rem 0 0 0.625rem;
+    font-size: 0.75rem;
   }
 
   &__form-container {
@@ -110,18 +103,21 @@
   }
 
   &__form-input {
-    width: 100%;
-    height: 30px;
-    padding: 12px;
+    @include height-width(1.875rem, 100%);
+    box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
+    border-radius: 0.625rem;
+    padding: 0.75rem;
+    z-index: 9999;
     outline: none;
     border: none;
-    border-radius: 10px;
-    box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
-    z-index: 9999;
   }
 
   &__form-send {
-    margin-top: 15px;
-    margin-left: 5px;
+    margin: 0.9375rem 0 0 0.3125rem;
+  }
+
+  &__send-icon {
+    position: relative;
+    top: 0.3125rem;
   }
 }

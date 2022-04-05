@@ -14,18 +14,15 @@ export default function JobsList({ job }) {
             <div className="jobsList__job-title-employer-container">
               <div className="jobsList__job-title-apply-container">
                 <h2 className="jobsList__sub-title jobsList__job-title">
-                  {job.jobTitle}
-                </h2>
-                <h3 className="jobsList__apply">
                   <a
                     className="jobsList__apply"
                     href={job.jobUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Apply
+                    {job.jobTitle}
                   </a>
-                </h3>
+                </h2>
               </div>
               <h3 className="jobsList__sub-title jobsList__employer">
                 {job.employerName}

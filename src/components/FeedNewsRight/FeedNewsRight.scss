@@ -1,27 +1,21 @@
-@use "../../styles/core/mixins" as *;
-@use "../../styles/core/typography" as *;
-@use "../../styles/core/variables" as *;
-
 .news-article {
   flex-basis: 25%;
-  margin: 15px 0;
-  top: 150px;
-  position: sticky;
+  margin: 0.9375rem 0;
 
   &__main-title {
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;
   }
 
   &__container {
-    margin-left: 5px;
+    margin-left: 0.3125rem;
   }
   &__list-item {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 
   &__title {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
   }
 
   &__date {

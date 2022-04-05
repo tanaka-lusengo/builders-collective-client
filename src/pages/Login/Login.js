@@ -49,7 +49,7 @@ export default function Login() {
               name="password"
               placeholder="Password"
               ref={password}
-              minLength={8}
+              minLength={5}
               required
             />
           </div>

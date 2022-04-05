@@ -7,7 +7,7 @@ import { PUBLIC_URL, GET_USERS_BY_ID } from "../../api/endpoints";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
-import { Users } from "../../dummyData";
+import { Users } from "../../data/dummyUsers";
 
 export default function Profile() {
   const [user, setUser] = useState({});
@@ -25,6 +25,14 @@ export default function Profile() {
     getUser();
   }, [username]);
 
+  let coverImg = PUBLIC_URL + "default-cover.jpeg";
+  let avatarImg = PUBLIC_URL + "default-profile.png";
+
+  if (user) {
+    coverImg = PUBLIC_URL + user.coverPicture;
+    avatarImg = PUBLIC_URL + user.profilePicture;
+  }
+
   return (
     <section className="profile">
       <div className="profile__layer">
@@ -35,24 +43,8 @@ export default function Profile() {
           })}
         </div>
         <div className="profile__right">
-          <img
-            className="profile__cover"
-            src={
-              user.coverPicture
-                ? PUBLIC_URL + user.coverPicture
-                : PUBLIC_URL + "default-cover.jpg"
-            }
-            alt="cover"
-          />
-          <img
-            className="profile__img"
-            src={
-              user.profilePicture
-                ? PUBLIC_URL + user.profilePicture
-                : PUBLIC_URL + "default-profile.png"
-            }
-            alt="profile picture"
-          />
+          <img className="profile__cover" src={coverImg} alt="cover" />
+          <img className="profile__img" src={avatarImg} alt="profile picture" />
           <div className="profile__name-job">
             <h1 className="profile__name">
               {user.firstName + " " + user.lastName}
@@ -60,15 +52,26 @@ export default function Profile() {
             <h3 className="profile__job">{user.jobTitle}</h3>
           </div>
           <div className="profile__info">
-            <p>Experience Level: {user.experienceLevel}</p>
-            <p>Skills: {user.skills}</p>
-            <p>Location: {user.location}</p>
-            <p>About:</p>
-            <p>{user.about}</p>
+            <h2 className="profile__info-title">{user.firstName}'s Bio</h2>
+            <p className="profile__info-text">
+              <span className="profile__info-text-item">Experience Level:</span>{" "}
+              {user.experienceLevel}
+            </p>
+            <p className="profile__info-text">
+              <span className="profile__info-text-item">Skills:</span>{" "}
+              {user.skills}
+            </p>
+            <p className="profile__info-text">
+              <span className="profile__info-text-item">Location:</span>{" "}
+              {user.location}
+            </p>
+            <p className="profile__info-text">
+              <span className="profile__info-text-item">About:</span>{" "}
+            </p>
+            <p className="profile__info-text">{user.about}</p>{" "}
           </div>
           <div className="profile__feed-share">
             <Feed username={username} />
-            {/* does not passdown username="clem-onojeghuo" from here, only community feed */}
           </div>
         </div>
       </div>

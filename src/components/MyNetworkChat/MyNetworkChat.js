@@ -1,30 +1,23 @@
 import React from "react";
 import { useState } from "react";
 import "./MyNetworkChat.scss";
-import {
-  TimestampChat,
-  handlePageScrollBottom,
-  handlePageScroll,
-} from "../../utilities/helper";
+import { TimestampChat } from "../../utilities/helper";
 import { useEffect } from "react";
-import { v4 as uuid4 } from "uuid";
 import SendIcon from "@mui/icons-material/Send";
 import CloseIcon from "@mui/icons-material/Close";
 import GroupIcon from "@mui/icons-material/Group";
-import ScrollToBottom from "react-scroll-to-bottom";
 import io from "socket.io-client";
 
 const socket = io.connect("http://localhost:3001");
 
 socket.on("message", (message) => {
-  // console.log(message);
+  console.log(message);
 });
 
 export default function MyNetworkChat({ socket, username, room, setShowChat }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageFeed, setMessageFeed] = useState([]);
 
-  //send message function
   const sendMessage = async () => {
     if (currentMessage) {
       const messageData = {
@@ -69,39 +62,34 @@ export default function MyNetworkChat({ socket, username, room, setShowChat }) {
           <main className="network-chat__main">
             <div className="network-chat__sidebar">
               <h3 className="network-chat__comments"></h3>
-              <h2 className="network-chat__room-name">Builders' Collective</h2>
+              <h2 className="network-chat__room-name">Welcome!</h2>
               <div className="network-chat__room-title-container">
                 <GroupIcon />
-
                 <h3 className="network-chat__users-title">Users</h3>
               </div>
               <ul className="network-chat__users-list">
-                <li className="network-chat__users-list-item">Brad</li>
+                <li className="network-chat__users-list-item"></li>
               </ul>
             </div>
             <div className="network-chat__chat-messages-container">
-              <ScrollToBottom className="network-chat__messages-container-scroll">
-                {messageFeed.map((message) => {
-                  return (
-                    <>
-                      <div
-                        className={
-                          "network-chat__messages network-chat__messages" +
-                          (username === message.author ? "" : "--other")
-                        }
-                      >
-                        <h3 className="network-chat__author">
-                          {message.author}:
-                        </h3>
-                        <p className="network-chat__content">
-                          {message.content}
-                        </p>
-                      </div>
-                      <p className="network-chat__time">{message.time}</p>
-                    </>
-                  );
-                })}
-              </ScrollToBottom>
+              {messageFeed.map((message) => {
+                return (
+                  <>
+                    <div
+                      className={
+                        "network-chat__messages network-chat__messages" +
+                        (username === message.author ? "" : "--other")
+                      }
+                    >
+                      <h3 className="network-chat__author">
+                        {message.author}:
+                      </h3>
+                      <p className="network-chat__content">{message.content}</p>
+                    </div>
+                    <p className="network-chat__time">{message.time}</p>
+                  </>
+                );
+              })}
             </div>
           </main>
           <div className="network-chat__form-container">
@@ -119,7 +107,7 @@ export default function MyNetworkChat({ socket, username, room, setShowChat }) {
               }}
             />
             <span className="network-chat__form-send" onClick={sendMessage}>
-              <SendIcon />
+              <SendIcon className="network-chat__send-icon" />
             </span>
           </div>
         </div>

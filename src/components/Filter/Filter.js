@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Filter.scss";
 import { ButtonFilter } from "../Button/Button";
 
 export default function Filter({ getJobsByTitleOrLocation }) {
-  //
+  // capture form values
+  const jobRole = useRef();
+  const location = useRef();
+
   const handleFilterSubmit = async (e) => {
     e.preventDefault();
     let form = e.target;
-    let jobTitleVal = form.jobRole.value;
-    let locationVal = form.location.value;
+    let jobTitleVal = jobRole.current.value;
+    let locationVal = location.current.value;
     try {
       await getJobsByTitleOrLocation(jobTitleVal, locationVal);
     } catch (e) {
@@ -35,6 +38,7 @@ export default function Filter({ getJobsByTitleOrLocation }) {
               type="text"
               name="location"
               placeholder=" London..."
+              ref={location}
             />
           </div>
 
@@ -43,6 +47,7 @@ export default function Filter({ getJobsByTitleOrLocation }) {
           <select
             className="filter__form-input filter__form-input-job"
             name="jobRole"
+            ref={jobRole}
           >
             <option value="">Job Role</option>
             <option value="Architect">Architect</option>

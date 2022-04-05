@@ -1,45 +1,41 @@
 @use "../../styles/core/mixins" as *;
-@use "../../styles/core/typography" as *;
 @use "../../styles/core/variables" as *;
 
 .profile {
-  top: 150px;
-  position: sticky;
+  top: 9.375rem;
   flex-basis: 25%;
-  border-radius: 10px;
+  border-radius: 0.625rem;
+  position: sticky;
   text-align: center;
   height: fit-content;
 
   &__top {
     @include flex(center, center, column);
     border: 1px solid $notificationText;
-    border-radius: 10px;
-    padding-bottom: 12px;
-    margin-top: 10px;
+    border-radius: 0.625rem;
+    padding-bottom: 0.75rem;
+    margin-top: 0.625rem;
   }
 
   &__cover-img {
-    margin-bottom: -20px;
-    width: 100%;
-    height: 80px;
+    @include height-width(5rem, 100%);
+    margin-bottom: -1.25rem;
+    border-top-left-radius: 0.625rem;
+    border-top-right-radius: 0.625rem;
     object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
   }
 
   &__name,
   &__job-title,
   &__description {
-    padding: 0 5px;
+    padding: 0 0.3125rem;
   }
 
   &__job-title {
-    margin-bottom: 12px;
+    margin-bottom: 0.75rem;
   }
 
-  // bottom section
-
   &__bottom-title {
-    margin-top: 10px;
+    margin-top: 0.625rem;
   }
 }
