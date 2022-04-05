@@ -2,12 +2,18 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./FeedPost.scss";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import { Timestamp } from "../../utilities/helper";
-import { PUBLIC_URL, GET_USERS_BY_ID, POST_LIKES } from "../../api/endpoints";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { Timestamp, handlePageScroll } from "../../utilities/helper";
+import {
+  PUBLIC_URL,
+  GET_USERS_BY_ID,
+  POST_LIKES,
+  POST_DELETE,
+} from "../../api/endpoints";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 
-export default function FeedPost({ post }) {
+export default function FeedPost({ post, posts, getTimelinePosts }) {
   //like states
   const [likes, setLikes] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
@@ -41,6 +47,27 @@ export default function FeedPost({ post }) {
     getUser();
   }, [post.userId]);
 
+  // delete functionality
+  // const findMatchingPost = posts.find(
+  //   (post) => post.userId === currentUser._id
+  // );
+
+  // console.log("posts", findMatchingPost);
+  // console.log("params -->", findMatchingPost._id);
+  // console.log("UserId body -->", currentUser._id);
+
+  // const handleDeletePost = async () => {
+  //   try {
+  //     await axios.delete(POST_DELETE(findMatchingPost._id), {
+  //       userId: currentUser._id,
+  //     });
+  //   } catch (error) {
+  //     console.log("deletePost error -->", error);
+  //   }
+  //   await getTimelinePosts();
+  //   handlePageScroll();
+  // };
+
   let avatarImg = PUBLIC_URL + "default-profile.png";
 
   if (user) {
@@ -69,9 +96,9 @@ export default function FeedPost({ post }) {
           <p className="feed-post__text">{post.content}</p>
         </div>
       </div>
-
       <div className="feed-post__bottom-container">
         <div className="feed-post__like-container">
+          {/* <DeleteIcon onClick={handleDeletePost} /> */}
           <p className="feed-post__like-counter">{likes}</p>
           <span className="feed-post__like-icon">
             <FavoriteBorderOutlinedIcon onClick={likeHandler} />

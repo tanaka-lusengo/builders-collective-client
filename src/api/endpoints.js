@@ -4,6 +4,9 @@ const API_URL = process.env.REACT_APP_DB_URL;
 // Socket Server URL
 export const SOCKET_SERVER = process.env.REACT_APP_SOCKET_SERVER;
 
+//GOOGLE news URL
+export const GOOGLE_NEWS = process.env.REACT_APP_GOOGLE_NEWS;
+
 // for predefined images in local/public folder
 export const PUBLIC_URL = process.env.REACT_APP_PUBLIC_IMG;
 
@@ -31,6 +34,8 @@ export const GET_USER_TIMELINE_POSTS = (username) =>
   `${API_URL}/post/profile/${username}`;
 
 export const POST_SHARE = `${API_URL}/post`;
+
+export const POST_DELETE = (id) => `${API_URL}/post/${id}`;
 
 export const POST_LIKES = (id) => `${API_URL}/post/${id}/like`;
 

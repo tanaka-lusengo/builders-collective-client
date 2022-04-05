@@ -12,7 +12,7 @@ import axios from "axios";
 export default function FeedShare({ getTimelinePosts }) {
   const { user } = useContext(AuthContext);
   const content = useRef();
-  //if time, create file uploading functionality
+  // if time, create file uploading functionality
   const [file, setFile] = useState(null);
 
   // submit share functionality
@@ -26,7 +26,7 @@ export default function FeedShare({ getTimelinePosts }) {
     try {
       await axios.post(POST_SHARE, newpost);
       getTimelinePosts();
-      content.reset();
+      content.current.value = "";
     } catch (err) {
       console.log("handleShareSubmit error -->", err);
     }
