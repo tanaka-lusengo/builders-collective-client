@@ -15,8 +15,14 @@ export const Users = [
   },
   {
     id: 3,
-    profilePicture: "emmanuel-ikwuegbu.jpeg",
-    username: "Emmanuel Ikwuegbu",
-    jobTitle: "H&P Engineer",
+    profilePicture: "carter-yocham.jpeg",
+    username: "Carter Yocham",
+    jobTitle: "Electrician",
+  },
+  {
+    id: 4,
+    profilePicture: "cesar-rincon.jpeg",
+    username: "Cesar Rincon",
+    jobTitle: "Bricklayer",
   },
 ];

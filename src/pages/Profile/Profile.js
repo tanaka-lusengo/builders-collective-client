@@ -58,6 +58,10 @@ export default function Profile() {
               {user.experienceLevel}
             </p>
             <p className="profile__info-text">
+              <span className="profile__info-text-item">Education:</span>{" "}
+              {user.education}
+            </p>
+            <p className="profile__info-text">
               <span className="profile__info-text-item">Skills:</span>{" "}
               {user.skills}
             </p>

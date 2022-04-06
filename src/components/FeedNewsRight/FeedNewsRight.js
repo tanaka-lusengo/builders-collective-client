@@ -46,6 +46,54 @@ export default function FeedNewsRight() {
             <p className="news-article__source">-Article Source</p>
           </div>
         </li>
+        <li className="news-article__list-item">
+          <div className="news-article__icon-container">
+            <ArticleIcon />
+          </div>
+          <div className="news-article__container">
+            <p className="news-article__title">
+              Construction product availability statement - Construction Index
+            </p>
+            <p className="news-article__date">-Published: Thu, 31 Mar 2022</p>
+            <p className="news-article__source">-Article Source</p>
+          </div>
+        </li>
+        <li className="news-article__list-item">
+          <div className="news-article__icon-container">
+            <ArticleIcon />
+          </div>
+          <div className="news-article__container">
+            <p className="news-article__title">
+              Construction product availability statement - Construction Index
+            </p>
+            <p className="news-article__date">-Published: Thu, 31 Mar 2022</p>
+            <p className="news-article__source">-Article Source</p>
+          </div>
+        </li>
+        <li className="news-article__list-item">
+          <div className="news-article__icon-container">
+            <ArticleIcon />
+          </div>
+          <div className="news-article__container">
+            <p className="news-article__title">
+              Construction product availability statement - Construction Index
+            </p>
+            <p className="news-article__date">-Published: Thu, 31 Mar 2022</p>
+            <p className="news-article__source">-Article Source</p>
+          </div>
+        </li>
+        <li className="news-article__list-item">
+          <div className="news-article__icon-container">
+            <ArticleIcon />
+          </div>
+          <div className="news-article__container">
+            <p className="news-article__title">
+              Construction product availability statement - Construction Index
+            </p>
+            <p className="news-article__date">-Published: Thu, 31 Mar 2022</p>
+            <p className="news-article__source">-Article Source</p>
+          </div>
+        </li>
       </ul>
     </article>
   );

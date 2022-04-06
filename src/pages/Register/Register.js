@@ -29,6 +29,8 @@ export default function Register() {
       jobTitle: jobTitle.current.value,
       experienceLevel: experienceLevel.current.value,
       location: location.current.value,
+      profilePicture: "default-profile.png",
+      coverPicture: "default-cover.jpeg",
     };
     try {
       await axios.post(POST_USER_REGISTER, newUser);
