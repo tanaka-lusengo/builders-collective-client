@@ -7,7 +7,6 @@ import {
   GET_JOBS_BY_TITLE_LOCATION,
 } from "../../api/endpoints";
 import "./ViewJobs.scss";
-import Header from "../../components/Header/Header";
 import Hero from "../../components/Hero/Hero";
 import Filter from "../../components/Filter/Filter";
 import JobsList from "../../components/JobsList/JobsList";
@@ -18,16 +17,10 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 export default function ViewJobs() {
   const [allJobs, setAllJobs] = useState(null);
-  // const [pageNumber, setPageNumber] = useState(1);
 
   // get all jobs from database
   const getAllJobs = async () => {
-    const response = await axios({
-      method: "GET",
-      url: GET_ALL_JOBS,
-      // params: { page: pageNumber },
-    });
-
+    const response = await axios.get(GET_ALL_JOBS);
     setAllJobs(response.data);
   };
 
