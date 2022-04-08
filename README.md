@@ -34,9 +34,9 @@ Install the dependencies and devDependencies and start the server.
 
 This application requires the below .env environment variables to run as seen on .env.example:
 
-REACT_APP_DB_URL = "URL"
-REACT_APP_SOCKET_SERVER = "URL"
-REACT_APP_PUBLIC_IMG = "URL"
+- REACT_APP_DB_URL = "URL"
+- REACT_APP_SOCKET_SERVER = "URL"
+- REACT_APP_PUBLIC_IMG = "URL"
 
 
 ```sh
