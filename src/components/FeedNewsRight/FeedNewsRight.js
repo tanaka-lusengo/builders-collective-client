@@ -7,9 +7,6 @@ export default function FeedNewsRight() {
     <article className="news-article">
       <h3 className="news-article__main-title">Current News</h3>
       <ul className="news-article__list">
-        {/* {Users.map((user) => {
-      return <RecentConnections key={uuidv4()} user={user} />;
-    })} */}
         <li className="news-article__list-item">
           <div className="news-article__icon-container">
             <ArticleIcon />
