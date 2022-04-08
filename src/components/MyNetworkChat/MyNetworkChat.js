@@ -6,9 +6,10 @@ import { useEffect } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import CloseIcon from "@mui/icons-material/Close";
 import GroupIcon from "@mui/icons-material/Group";
+import { SOCKET_SERVER } from "../../api/endpoints";
 import io from "socket.io-client";
 
-const socket = io.connect("http://localhost:3001");
+const socket = io.connect(SOCKET_SERVER);
 
 socket.on("message", (message) => {
   console.log(message);
