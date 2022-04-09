@@ -56,5 +56,5 @@ Builders’ Collective is in Version 1 (post capstone Demo Day). Version 2 will 
 MIT
 
 ## Contact
-Tanaka Lusengo - tc.lusengo@gmail.com
-Project Link: https://github.com/tanaka-lusengo/builders-collective-client
+- Tanaka Lusengo - tc.lusengo@gmail.com
+- Project Link: https://github.com/tanaka-lusengo/builders-collective-client
