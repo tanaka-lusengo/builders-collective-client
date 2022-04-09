@@ -32,7 +32,7 @@ Builders’ Collective requires Node.js (https://github.com/tanaka-lusengo/build
 
 Install the dependencies and devDependencies and start the server.
 
-This application requires the below .env environment variables to run as seen on .env.example:
+This application requires the below environment variables to run as seen on .env.example:
 
 - REACT_APP_DB_URL = "URL"
 - REACT_APP_SOCKET_SERVER = "URL"
@@ -49,7 +49,7 @@ Runs the app in the development mode.
 Open http://localhost:3000 to view it in your browser.
 
 ## Status
-Builders’ Collective is in Version 1 (post capston Demo Day). Version 2 will be out soon.
+Builders’ Collective is in Version 1 (post capstone Demo Day). Version 2 will be out soon.
 
 ## License
 
