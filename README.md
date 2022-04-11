@@ -1,6 +1,7 @@
 # Builders’ Collective - Client
 
 A dedicated social media platform for Construction Professionals & Skilled Tradesmen and companies’ to network and secure quality jobs.
+- Deployed site can be found here: https://builders-collective.herokuapp.com/
 
 ## Table of Content:
 - About The App
@@ -23,6 +24,10 @@ MERN Stack + Socket.io
 - [Sass]
 
 ## Setup / Installation
+
+You can find the deployed site on: https://builders-collective.herokuapp.com/
+
+alternatively to use on your local host:
 
 Download or clone the repository: 
 ```sh
