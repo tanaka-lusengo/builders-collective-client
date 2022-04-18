@@ -15,7 +15,7 @@ const ButtonFilter = ({ buttonName }) => {
 
 const ButtonShare = ({ buttonName }) => {
   return (
-    <button className="button__button button__button-share">
+    <button className="button__button button__button-share" type="submit">
       {buttonName}
     </button>
   );
@@ -32,6 +32,17 @@ const ButtonHeader = ({ buttonName }) => {
 const ButtonRegisterLogin = ({ buttonName }) => {
   return (
     <button className="button__button button__button-register-login">
+      {buttonName}
+    </button>
+  );
+};
+
+const ButtonFollow = ({ buttonName, handleFollow }) => {
+  return (
+    <button
+      className="button__button button__button-follow"
+      onClick={handleFollow}
+    >
       {buttonName}
     </button>
   );
@@ -54,5 +65,6 @@ export {
   ButtonShare,
   ButtonHeader,
   ButtonRegisterLogin,
+  ButtonFollow,
   ButtonMessaging,
 };

@@ -8,14 +8,14 @@
     display: flex;
   }
 
-  &__left {
-    flex-basis: 25%;
-  }
-
-  &__right {
+  &__middle {
     border-top-left-radius: 0.625rem;
     border-top-right-radius: 0.625rem;
     flex-basis: 75%;
+  }
+
+  &__right {
+    flex-basis: 25%;
   }
 
   &__cover {

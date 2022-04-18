@@ -1,0 +1,40 @@
+@use "../../styles/core/mixins" as *;
+@use "../../styles/core/typography" as *;
+@use "../../styles/core/variables" as *;
+
+.recent {
+  @include flex(start, center);
+
+  &__friend-item-container {
+    position: relative;
+  }
+
+  &__friend-img {
+    @include height-width(2.5rem, 2.5rem);
+    margin: 0.3125rem 0.625rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__friend-online {
+    @include height-width(0.75rem, 0.75rem);
+    border: 0.125rem solid whitesmoke;
+    border-radius: 50%;
+    top: 0.3125rem;
+    right: 0.625rem;
+    background-color: $online;
+    position: absolute;
+  }
+
+  &__friend-name-container {
+    @include flex(start, start, column);
+  }
+
+  &__friend-name {
+    margin-left: 0.9375rem;
+  }
+
+  &__add-friend {
+    margin-left: 0.3125rem;
+  }
+}
