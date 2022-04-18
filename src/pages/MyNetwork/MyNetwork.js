@@ -5,10 +5,10 @@ import MyNetworkChat from "../../components/MyNetworkChat/MyNetworkChat";
 import { ButtonMessaging } from "../../components/Button/Button";
 import { SOCKET_SERVER } from "../../api/endpoints";
 import io from "socket.io-client";
-const socket = io.connect(SOCKET_SERVER);
 
 export default function MyNetwork() {
   // set state to get user info checking which rooms they enter
+  const socket = io.connect(SOCKET_SERVER);
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);

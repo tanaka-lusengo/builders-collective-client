@@ -6,8 +6,6 @@ import { useEffect } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import CloseIcon from "@mui/icons-material/Close";
 import GroupIcon from "@mui/icons-material/Group";
-import { SOCKET_SERVER } from "../../api/endpoints";
-import io from "socket.io-client";
 
 export default function MyNetworkChat({ socket, username, room, setShowChat }) {
   const [currentMessage, setCurrentMessage] = useState("");
