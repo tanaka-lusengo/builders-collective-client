@@ -1,9 +1,6 @@
 import React from "react";
 import "./FeedNewsRight.scss";
 import ArticleIcon from "@mui/icons-material/Article";
-import MyNetworkFriends from "../MyNetworkFriends/MyNetworkFriends";
-import { v4 as uuidv4 } from "uuid";
-import { Users } from "../../data/dummyUsers";
 
 export default function FeedNewsRight() {
   return (
