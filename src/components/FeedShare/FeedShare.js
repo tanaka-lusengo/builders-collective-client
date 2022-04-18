@@ -6,7 +6,7 @@ import PresentToAllOutlinedIcon from "@mui/icons-material/PresentToAllOutlined";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import { ButtonShare } from "../Button/Button";
 import { AuthContext } from "../../context/AuthContext";
-import { POST_SHARE, PUBLIC_URL } from "../../api/endpoints";
+import { POST_SHARE, PUBLIC_URL, POST_UPLOAD_IMG } from "../../api/endpoints";
 import axios from "axios";
 
 export default function FeedShare({ getTimelinePosts }) {
@@ -18,14 +18,30 @@ export default function FeedShare({ getTimelinePosts }) {
   // submit share functionality
   const handleShareSubmit = async (e) => {
     e.preventDefault();
-    const newpost = {
+
+    const newPost = {
       userId: user._id,
       content: content.current.value,
-      image: "default-post.jpeg",
     };
+
+    // creating a condition for if the user uploads a photo.
+    if (file) {
+      const formData = new FormData();
+      const fileName = file.name; // giving a unique name to each file to avoid conflicts
+      formData.append("file", file);
+      formData.append("name", fileName);
+      newPost.image = fileName;
+
+      try {
+        await axios.post(POST_UPLOAD_IMG, formData);
+      } catch (err) {
+        console.log("handleShareSubmit Upload Image -->", err);
+      }
+    }
+
     try {
-      await axios.post(POST_SHARE, newpost);
-      getTimelinePosts();
+      await axios.post(POST_SHARE, newPost);
+      await getTimelinePosts();
       content.current.value = "";
     } catch (err) {
       console.log("handleShareSubmit error -->", err);
@@ -69,7 +85,7 @@ export default function FeedShare({ getTimelinePosts }) {
               className="feed-share__input-file"
               id="file-upload"
               accept=".png, .jpg, .jpeg"
-              onChange={(e) => setFile(e.target.files(0))}
+              onChange={(e) => setFile(e.target.files[0])}
             />
           </label>
           <label className="feed-share__job-project-container">

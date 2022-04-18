@@ -1,8 +1,8 @@
 import React from "react";
-import "./RecentConnections.scss";
+import "./MyNetworkOnline.scss";
 import { PUBLIC_URL } from "../../api/endpoints";
 
-export default function RecentConnections({ user }) {
+export default function MyNetworkOnline({ user }) {
   return (
     <>
       <li className="recent">

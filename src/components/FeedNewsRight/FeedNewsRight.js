@@ -1,6 +1,9 @@
 import React from "react";
 import "./FeedNewsRight.scss";
 import ArticleIcon from "@mui/icons-material/Article";
+import MyNetworkFriends from "../MyNetworkFriends/MyNetworkFriends";
+import { v4 as uuidv4 } from "uuid";
+import { Users } from "../../data/dummyUsers";
 
 export default function FeedNewsRight() {
   return (
@@ -13,9 +16,10 @@ export default function FeedNewsRight() {
           </div>
           <div className="news-article__container">
             <p className="news-article__title">
-              Construction leads - April 1st - Scottish Construction Now
+              Fife construction firm says fuel thefts linked to government's red
+              diesel ban - The Courier
             </p>
-            <p className="news-article__date">-Published: Tue, 30 Jun 2020</p>
+            <p className="news-article__date">-Published: Mon, 18 Apr 2022</p>
             <p className="news-article__source">-Article Source</p>
           </div>
         </li>
@@ -25,9 +29,10 @@ export default function FeedNewsRight() {
           </div>
           <div className="news-article__container">
             <p className="news-article__title">
-              Construction product availability statement - Construction Index
+              The World's 25 Tallest Buildings Currently Under Construction -
+              ArchDaily
             </p>
-            <p className="news-article__date">-Published: Thu, 31 Mar 2022</p>
+            <p className="news-article__date">-Published: Mon, 18 Apr 2022</p>
             <p className="news-article__source">-Article Source</p>
           </div>
         </li>
@@ -37,9 +42,10 @@ export default function FeedNewsRight() {
           </div>
           <div className="news-article__container">
             <p className="news-article__title">
-              Construction product availability statement - Construction Index
+              Fife construction firm says fuel thefts linked to government's red
+              diesel ban - The Courier
             </p>
-            <p className="news-article__date">-Published: Thu, 31 Mar 2022</p>
+            <p className="news-article__date">-Published: Mon, 18 Apr 2022</p>
             <p className="news-article__source">-Article Source</p>
           </div>
         </li>
@@ -49,45 +55,10 @@ export default function FeedNewsRight() {
           </div>
           <div className="news-article__container">
             <p className="news-article__title">
-              Construction product availability statement - Construction Index
+              Construction boss convicted of manslaughter after worker fell two
+              storeys to his death - The Independent
             </p>
-            <p className="news-article__date">-Published: Thu, 31 Mar 2022</p>
-            <p className="news-article__source">-Article Source</p>
-          </div>
-        </li>
-        <li className="news-article__list-item">
-          <div className="news-article__icon-container">
-            <ArticleIcon />
-          </div>
-          <div className="news-article__container">
-            <p className="news-article__title">
-              Construction product availability statement - Construction Index
-            </p>
-            <p className="news-article__date">-Published: Thu, 31 Mar 2022</p>
-            <p className="news-article__source">-Article Source</p>
-          </div>
-        </li>
-        <li className="news-article__list-item">
-          <div className="news-article__icon-container">
-            <ArticleIcon />
-          </div>
-          <div className="news-article__container">
-            <p className="news-article__title">
-              Construction product availability statement - Construction Index
-            </p>
-            <p className="news-article__date">-Published: Thu, 31 Mar 2022</p>
-            <p className="news-article__source">-Article Source</p>
-          </div>
-        </li>
-        <li className="news-article__list-item">
-          <div className="news-article__icon-container">
-            <ArticleIcon />
-          </div>
-          <div className="news-article__container">
-            <p className="news-article__title">
-              Construction product availability statement - Construction Index
-            </p>
-            <p className="news-article__date">-Published: Thu, 31 Mar 2022</p>
+            <p className="news-article__date">-Published: Mon, 18 Apr 2022</p>
             <p className="news-article__source">-Article Source</p>
           </div>
         </li>

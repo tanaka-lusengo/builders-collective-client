@@ -47,3 +47,17 @@ export const POST_USER_LOGIN = `${API_URL}/login`;
 export const POST_USER_REGISTER = `${API_URL}/register`;
 
 export const GET_USERS_BY_ID = (userId) => `${API_URL}/user${userId}`;
+
+export const GET_USER_FRIENDS_BY_ID = (userId) =>
+  `${API_URL}/user/friends/${userId}`;
+
+export const PUT_FOLLOW_FRIENDS_BY_ID = (userId) =>
+  `${API_URL}/user/${userId}/follow`;
+
+export const DELETE_UNFOLLOW_FRIENDS_BY_ID = (userId) =>
+  `${API_URL}/user/${userId}/unfollow`;
+
+//----------------------------------------------------------
+// fileModel routes
+
+export const POST_UPLOAD_IMG = `${API_URL}/upload`;
