@@ -1,17 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { AvatarFeed } from "../Avatar/Avatar";
 import "./FeedProfileLeft.scss";
-import "../RecentConnections/RecentConnections.scss";
-import RecentConnections from "../RecentConnections/RecentConnections";
+import "../MyNetworkOnline/MyNetworkOnline.scss";
 import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
-import { PUBLIC_URL } from "../../api/endpoints";
+import { PUBLIC_URL, GET_USER_FRIENDS_BY_ID } from "../../api/endpoints";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { Users } from "../../data/dummyUsers";
+import MyNetworkFriends from "../MyNetworkFriends/MyNetworkFriends";
+import axios from "axios";
 
 export default function FeedProfile() {
   const { user } = useContext(AuthContext);
+  const [friends, setFriends] = useState([]);
+
+  // get user friends
+  const getUserFriends = async () => {
+    try {
+      const response = await axios.get(GET_USER_FRIENDS_BY_ID(user._id));
+      setFriends(response.data);
+    } catch (err) {
+      console.log("getUserFriends error -->", err);
+    }
+  };
+
+  // get user's friends
+  useEffect(() => {
+    getUserFriends();
+  }, [user]);
 
   let coverImg = PUBLIC_URL + "default-cover.jpeg";
   let avatarImg = PUBLIC_URL + "default-profile.png";
@@ -39,10 +55,12 @@ export default function FeedProfile() {
         <p className="profile__description">{user.about}</p>
       </div>
       <div className="profile__bottom">
-        <h3 className="profile__bottom-title">Recent Connections</h3>
+        <h3 className="profile__bottom-title">My Network</h3>
         <ul className="profile__friend-list">
-          {Users.map((user) => {
-            return <RecentConnections key={uuidv4()} user={user} />;
+          {friends.map((friend) => {
+            return (
+              <MyNetworkFriends key={uuidv4()} user={user} friend={friend} />
+            );
           })}
         </ul>
       </div>

@@ -31,7 +31,9 @@ export default function Feed({ username }) {
 
   return (
     <section className="feed">
-      <FeedShare getTimelinePosts={getTimelinePosts} />
+      {(!username || username === user.username) && (
+        <FeedShare getTimelinePosts={getTimelinePosts} />
+      )}
       {posts.sort(sortByTimestamp).map((post) => {
         return (
           <FeedPost

@@ -9,12 +9,6 @@ import GroupIcon from "@mui/icons-material/Group";
 import { SOCKET_SERVER } from "../../api/endpoints";
 import io from "socket.io-client";
 
-const socket = io.connect(SOCKET_SERVER);
-
-socket.on("message", (message) => {
-  console.log(message);
-});
-
 export default function MyNetworkChat({ socket, username, room, setShowChat }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageFeed, setMessageFeed] = useState([]);

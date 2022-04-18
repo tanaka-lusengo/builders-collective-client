@@ -55,4 +55,16 @@
       background-color: $secondaryCream;
     }
   }
+
+  &__button-follow {
+    @include flex(center, center);
+    @include height-width(0px, 5rem);
+    padding: 0.625rem;
+    margin-bottom: 0.9375rem;
+    background-color: $primaryCream;
+
+    &:hover {
+      background-color: $secondaryCream;
+    }
+  }
 }
