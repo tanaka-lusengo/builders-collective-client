@@ -29,8 +29,9 @@ export default function Register() {
       jobTitle: jobTitle.current.value,
       experienceLevel: experienceLevel.current.value,
       location: location.current.value,
-      profilePicture: "default-profile.png",
-      coverPicture: "default-cover.jpeg",
+      profilePicture: "default-profile.png", // default profile pic
+      coverPicture: "default-cover.jpeg", // default cover image
+      following: "62544bf253382d463242283e", // default follow me (Tanaka), to allow them to follow my friends.
     };
     try {
       await axios.post(POST_USER_REGISTER, newUser);

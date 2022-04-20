@@ -27,11 +27,12 @@ export default function FeedShare({ getTimelinePosts }) {
     // creating a condition for if the user uploads a photo.
     if (file) {
       const formData = new FormData();
-      const fileName = file.name; // giving a unique name to each file to avoid conflicts
+      const fileName = file.name; // usually give a unique name to each file to avoid conflicts - need to learn
       formData.append("file", file);
       formData.append("name", fileName);
       newPost.image = fileName;
 
+      // upload image to local server
       try {
         await axios.post(POST_UPLOAD_IMG, formData);
       } catch (err) {
