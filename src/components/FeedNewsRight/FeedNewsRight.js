@@ -20,6 +20,7 @@ export default function FeedNewsRight() {
             <a
               href="https://businessnewswales.com/construction-orders-show-fastest-rise-in-seven-months/"
               target="_blank"
+              rel="noreferrer"
               className="news-article__source"
             >
               -Article Source{" "}
@@ -39,6 +40,7 @@ export default function FeedNewsRight() {
             <a
               href="https://www.theconstructionindex.co.uk/news/view/northern-ireland-builders-call-for-construction-a-level"
               target="_blank"
+              rel="noreferrer"
               className="news-article__source"
             >
               -Article Source
@@ -58,6 +60,7 @@ export default function FeedNewsRight() {
             <a
               href="https://www.constructionnews.co.uk/buildings/homes-england-reveals-17-upcoming-contract-opportunities-19-04-2022/"
               target="_blank"
+              rel="noreferrer"
               className="news-article__source"
             >
               -Article Source
