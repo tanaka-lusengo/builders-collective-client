@@ -39,13 +39,7 @@ Builders’ Collective requires Node.js:
 - server (https://github.com/tanaka-lusengo/builders-collective-server) + 
 - socket server (https://github.com/tanaka-lusengo/builders-collective-socket) to run.
 
-Install the dependencies and devDependencies and start the server.
-
-This application requires the below environment variables to run as seen on .env.example:
-
-- REACT_APP_DB_URL = "URL"
-- REACT_APP_SOCKET_SERVER = "URL"
-- REACT_APP_PUBLIC_IMG = "URL"
+Install the dependencies and start the server.
 
 ```sh
 cd builders-collective-client
@@ -53,8 +47,13 @@ npm i
 npm start
 ```
 
+This application requires the below environment variables to run as seen on .env.example:
+
+- REACT_APP_DB_URL = "URL"
+- REACT_APP_SOCKET_SERVER = "URL"
+- REACT_APP_PUBLIC_IMG = "URL"
+
 Runs the app in the development mode.
-Open http://localhost:3000 to view it in your browser.
 
 ## Status
 Builders’ Collective is in Version 1 (post capstone Demo Day). Version 2 will be out soon.
