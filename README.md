@@ -64,4 +64,4 @@ Builders’ Collective is in Version 1 (post capstone Demo Day). Version 2 will 
 MIT
 
 ## Contact
-- Tanaka Lusengo - tc.lusengo@gmail.com
+- Tanaka Lusengo - tc.lusengo@gmail.com | https://www.linkedin.com/in/tanakalusengo/
