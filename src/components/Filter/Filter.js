@@ -50,14 +50,9 @@ export default function Filter({ getJobsByTitleOrLocation }) {
             ref={jobRole}
           >
             <option value="">Job Role</option>
-            <option value="Architect">Architect</option>
-            <option value="Site Manager">Construction/ Site Manager</option>
             <option value="Quantity Surveyor">Quantity Surveyor</option>
             <option value="Electrician">Electrician</option>
             <option value="Plumbing">Plumbing & Heating Engineer</option>
-            <option value="Air Conditioning Engineer">
-              Air Conditioning Engineer
-            </option>
             <option value="Bricklayer">Bricklayer</option>
             <option value="Carpenter">Carpenter</option>
           </select>
