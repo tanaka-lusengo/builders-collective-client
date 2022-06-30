@@ -1,9 +1,6 @@
 import React from "react";
 import "./FeedNewsRight.scss";
 import ArticleIcon from "@mui/icons-material/Article";
-import MyNetworkFriends from "../MyNetworkFriends/MyNetworkFriends";
-import { v4 as uuidv4 } from "uuid";
-import { Users } from "../../data/dummyUsers";
 
 export default function FeedNewsRight() {
   return (
@@ -16,11 +13,18 @@ export default function FeedNewsRight() {
           </div>
           <div className="news-article__container">
             <p className="news-article__title">
-              Fife construction firm says fuel thefts linked to government's red
-              diesel ban - The Courier
+              Construction Orders Show Fastest Rise in Seven Months - Business
+              News Wales
             </p>
-            <p className="news-article__date">-Published: Mon, 18 Apr 2022</p>
-            <p className="news-article__source">-Article Source</p>
+            <p className="news-article__date">-Published: Wed, 20 Apr 2022</p>
+            <a
+              href="https://businessnewswales.com/construction-orders-show-fastest-rise-in-seven-months/"
+              target="_blank"
+              rel="noreferrer"
+              className="news-article__source"
+            >
+              -Article Source{" "}
+            </a>
           </div>
         </li>
         <li className="news-article__list-item">
@@ -29,11 +33,18 @@ export default function FeedNewsRight() {
           </div>
           <div className="news-article__container">
             <p className="news-article__title">
-              The World's 25 Tallest Buildings Currently Under Construction -
-              ArchDaily
+              Northern Ireland builders call for construction A level -
+              Construction Index
             </p>
-            <p className="news-article__date">-Published: Mon, 18 Apr 2022</p>
-            <p className="news-article__source">-Article Source</p>
+            <p className="news-article__date">-Published: Tue, 19 Apr 2022</p>
+            <a
+              href="https://www.theconstructionindex.co.uk/news/view/northern-ireland-builders-call-for-construction-a-level"
+              target="_blank"
+              rel="noreferrer"
+              className="news-article__source"
+            >
+              -Article Source
+            </a>
           </div>
         </li>
         <li className="news-article__list-item">
@@ -42,24 +53,18 @@ export default function FeedNewsRight() {
           </div>
           <div className="news-article__container">
             <p className="news-article__title">
-              Fife construction firm says fuel thefts linked to government's red
-              diesel ban - The Courier
+              Homes England reveals 17 upcoming contract opportunities -
+              Construction News
             </p>
-            <p className="news-article__date">-Published: Mon, 18 Apr 2022</p>
-            <p className="news-article__source">-Article Source</p>
-          </div>
-        </li>
-        <li className="news-article__list-item">
-          <div className="news-article__icon-container">
-            <ArticleIcon />
-          </div>
-          <div className="news-article__container">
-            <p className="news-article__title">
-              Construction boss convicted of manslaughter after worker fell two
-              storeys to his death - The Independent
-            </p>
-            <p className="news-article__date">-Published: Mon, 18 Apr 2022</p>
-            <p className="news-article__source">-Article Source</p>
+            <p className="news-article__date">-Published: Tue, 19 Apr 2022</p>
+            <a
+              href="https://www.constructionnews.co.uk/buildings/homes-england-reveals-17-upcoming-contract-opportunities-19-04-2022/"
+              target="_blank"
+              rel="noreferrer"
+              className="news-article__source"
+            >
+              -Article Source
+            </a>
           </div>
         </li>
       </ul>

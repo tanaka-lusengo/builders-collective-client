@@ -51,8 +51,6 @@ export default function Filter({ getJobsByTitleOrLocation }) {
           >
             <option value="">Job Role</option>
             <option value="Quantity Surveyor">Quantity Surveyor</option>
-            <option value="Electrician">Electrician</option>
-            <option value="Plumbing">Plumbing & Heating Engineer</option>
             <option value="Bricklayer">Bricklayer</option>
             <option value="Carpenter">Carpenter</option>
           </select>

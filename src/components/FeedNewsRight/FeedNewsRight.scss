@@ -1,3 +1,5 @@
+@use "../../styles/core/variables" as *;
+
 .news-article {
   flex-basis: 25%;
   margin: 0.9375rem 0;
@@ -20,5 +22,14 @@
 
   &__date {
     font-weight: 700;
+  }
+
+  &__source {
+    color: $primaryAccent;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      color: $secondaryCream;
+    }
   }
 }
