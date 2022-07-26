@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify";
 export default function Login() {
   const email = useRef();
   const password = useRef();
-  const { dispatch, error } = useContext(AuthContext);
+  const { dispatch } = useContext(AuthContext);
 
   const handleLogin = (e) => {
     e.preventDefault();

@@ -20,25 +20,33 @@ export default function ViewJobs() {
 
   // get all jobs from database
   const getAllJobs = async () => {
-    const response = await axios.get(GET_ALL_JOBS);
-    setAllJobs(response.data);
+    try {
+      const response = await axios.get(GET_ALL_JOBS);
+      setAllJobs(response.data);
+    } catch (error) {
+      console.log("getAllJobs error-->", error);
+    }
   };
 
   // function to filter jobs
   const getJobsByTitleOrLocation = async (jobTitle, location) => {
-    if (jobTitle && location) {
-      const response = await axios.get(
-        GET_JOBS_BY_TITLE_LOCATION(jobTitle, location)
-      );
-      setAllJobs(response.data);
-    } else if (!jobTitle && location) {
-      const response = await axios.get(GET_JOBS_BY_LOCATION(location));
-      setAllJobs(response.data);
-    } else if (jobTitle && !location) {
-      const response = await axios.get(GET_JOBS_BY_TITLE(jobTitle, location));
-      setAllJobs(response.data);
+    try {
+      if (jobTitle && location) {
+        const response = await axios.get(
+          GET_JOBS_BY_TITLE_LOCATION(jobTitle, location)
+        );
+        setAllJobs(response.data);
+      } else if (!jobTitle && location) {
+        const response = await axios.get(GET_JOBS_BY_LOCATION(location));
+        setAllJobs(response.data);
+      } else if (jobTitle && !location) {
+        const response = await axios.get(GET_JOBS_BY_TITLE(jobTitle, location));
+        setAllJobs(response.data);
+      }
+      handlePageScroll();
+    } catch (error) {
+      console.log("getJobsByTitleOrLocation -->", error);
     }
-    handlePageScroll();
   };
 
   useEffect(() => {

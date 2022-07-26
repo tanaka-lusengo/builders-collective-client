@@ -43,7 +43,7 @@ export default function FeedProfile() {
         <img
           className="profile__cover-img"
           src={coverImg}
-          alt="profile cover image"
+          alt="profile cover "
         />
         <Link to={`/profile/${user.username}`}>
           <AvatarFeed img={avatarImg} />

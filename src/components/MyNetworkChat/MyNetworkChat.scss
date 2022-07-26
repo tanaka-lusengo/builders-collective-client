@@ -7,7 +7,7 @@
   overflow: hidden;
 
   &__layer {
-    @include height-width(28.125rem, 40.625rem);
+    @include height-width(28.125rem, 28.125rem);
     box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
     background-color: whitesmoke;
     border-radius: 0.3125rem;
@@ -51,13 +51,8 @@
     width: 12.5rem;
   }
 
-  &__comments {
-    margin: 0.625rem 0;
-    text-align: center;
-  }
-
   &__room-name {
-    margin-bottom: 1.25rem;
+    margin: 0.625rem 0;
   }
 
   &__room-title-container {
@@ -119,5 +114,13 @@
   &__send-icon {
     position: relative;
     top: 0.3125rem;
+  }
+}
+
+@include tablet {
+  .network-chat {
+    &__layer {
+      @include height-width(28.125rem, 40.625rem);
+    }
   }
 }

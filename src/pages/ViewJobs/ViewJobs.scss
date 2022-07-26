@@ -7,25 +7,45 @@
   background-color: $primaryCream;
 
   &__layer {
-    margin: 0 7.5rem;
-  }
-
-  &__main-content-container {
-    display: flex;
+    margin: 0 1.25rem;
   }
 
   &__left {
-    flex-basis: 30%;
-    width: 21.1875rem;
-    margin-right: 1.875rem;
-  }
-
-  &__right {
-    flex-basis: 70%;
-    width: 49.4375rem;
+    margin-bottom: 1.875rem;
   }
 
   &__loading {
     @include flex(center, center);
+  }
+}
+
+@include tablet {
+  .viewJobs {
+    &__layer {
+      margin: 0 5rem;
+    }
+  }
+}
+
+@include desktop {
+  .viewJobs {
+    &__layer {
+      margin: 0 7.5rem;
+    }
+
+    &__main-content-container {
+      display: flex;
+    }
+
+    &__left {
+      flex-basis: 30%;
+      width: 21.1875rem;
+      margin-right: 1.875rem;
+    }
+
+    &__right {
+      flex-basis: 70%;
+      width: 49.4375rem;
+    }
   }
 }

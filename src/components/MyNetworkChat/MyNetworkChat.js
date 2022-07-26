@@ -54,7 +54,6 @@ export default function MyNetworkChat({ socket, username, room, setShowChat }) {
           </header>
           <main className="network-chat__main">
             <div className="network-chat__sidebar">
-              <h3 className="network-chat__comments"></h3>
               <h2 className="network-chat__room-name">Welcome!</h2>
               <div className="network-chat__room-title-container">
                 <GroupIcon />
