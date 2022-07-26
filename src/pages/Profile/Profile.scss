@@ -4,8 +4,7 @@
 
 .profile {
   &__layer {
-    margin: 0.625rem 7.5rem;
-    display: flex;
+    margin: 0.625rem 1.25rem;
   }
 
   &__middle {
@@ -29,7 +28,7 @@
     @include height-width(9.375rem, 9.375rem); // 36px
     border-radius: 50%;
     object-fit: cover;
-    margin: -6.25rem 21.875rem 0 0;
+    margin: -6.25rem 320px 0 0;
     border: 0.3125rem solid whitesmoke;
   }
 
@@ -48,5 +47,26 @@
 
   &__info-text-item {
     font-weight: 700;
+  }
+}
+
+@include tablet {
+  .profile {
+    &__layer {
+      margin: 10px 80px;
+    }
+
+    &__img {
+      margin: -6.25rem 21.875rem 0 0;
+    }
+  }
+}
+
+@include desktop {
+  .profile {
+    &__layer {
+      margin: 10px 120px;
+      display: flex;
+    }
   }
 }
