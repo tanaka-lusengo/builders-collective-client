@@ -12,7 +12,7 @@ export default function MyNetworkFriends({ friend }) {
             <img
               className="recent__friend-img"
               src={PUBLIC_URL + friend.profilePicture}
-              alt="friend profile image"
+              alt="friend profile"
             />
           </Link>
           {/* <span className="recent__friend-online"></span> */}

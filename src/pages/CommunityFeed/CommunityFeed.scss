@@ -4,11 +4,27 @@
 
 .community-feed {
   &__layer {
-    margin: 0 7.5rem;
-    display: flex;
+    margin: 0 1.25rem;
   }
 
   &__loading {
     @include flex(center, center);
+  }
+}
+
+@include tablet {
+  .community-feed {
+    &__layer {
+      margin: 0 5rem;
+    }
+  }
+}
+
+@include desktop {
+  .community-feed {
+    &__layer {
+      margin: 0 7.5rem;
+      display: flex;
+    }
   }
 }

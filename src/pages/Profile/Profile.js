@@ -98,7 +98,7 @@ export default function Profile() {
       <div className="profile__layer">
         <section className="profile__middle">
           <img className="profile__cover" src={coverImg} alt="cover" />
-          <img className="profile__img" src={avatarImg} alt="profile picture" />
+          <img className="profile__img" src={avatarImg} alt="user profile" />
           <div className="profile__name-job">
             <h1 className="profile__name">
               {user.firstName + " " + user.lastName}

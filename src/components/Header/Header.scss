@@ -11,12 +11,12 @@
 
   &__logo {
     color: black;
+    margin-bottom: 15px;
   }
 
   &__layer {
-    @include flex(space-between, center);
-    margin: 0 7.5rem;
-    padding: 3.125rem 0;
+    margin: 0 1.25rem;
+    padding: 20px 0;
   }
 
   &__nav {
@@ -28,26 +28,8 @@
   }
 
   &__nav-list-item {
-    margin-left: 1.875rem;
+    margin-right: 25px;
     color: $primaryText;
-
-    &--active {
-      color: $secondaryCream;
-    }
-
-    &:after {
-      display: block;
-      content: "";
-      border-bottom: solid 0.125rem $secondaryCream;
-      transform: scaleX(0);
-      transition: transform 0.3s ease-in-out;
-      transform-origin: 50% 50%;
-    }
-
-    &:hover:after {
-      transform: scaleX(1);
-      transform-origin: 50% 50%;
-    }
   }
 
   &__nav-list-item-icon {
@@ -68,10 +50,70 @@
 
   &__register-login-container {
     @include flex(null, center);
-    margin-left: 6.25rem;
+    margin-left: 20px;
   }
 
   &__register-container {
     margin-right: 1.875rem;
+  }
+}
+
+@include tablet {
+  .header {
+    &__layer {
+      margin: 0 5rem;
+      padding: 3.125rem 0;
+    }
+
+    &__nav-list-item {
+      &__register-login-container {
+        @include flex(null, center);
+        margin-left: 6.25rem;
+      }
+
+      &__register-container {
+        margin-right: 1.875rem;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .header {
+    &__layer {
+      @include flex(space-between, center);
+      margin: 0 7.5rem;
+      padding: 3.125rem 0;
+    }
+
+    &__nav {
+      @include flex(null, center);
+    }
+
+    &__nav-list-container {
+      @include flex(null, center);
+    }
+
+    &__nav-list-item {
+      margin-left: 1.875rem;
+
+      &--active {
+        color: $secondaryCream;
+      }
+
+      &:after {
+        display: block;
+        content: "";
+        border-bottom: solid 0.125rem $secondaryCream;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+        transform-origin: 50% 50%;
+      }
+
+      &:hover:after {
+        transform: scaleX(1);
+        transform-origin: 50% 50%;
+      }
+    }
   }
 }

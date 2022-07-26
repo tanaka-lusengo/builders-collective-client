@@ -10,7 +10,7 @@ export default function MyNetworkOnline({ user }) {
           <img
             className="recent__friend-img"
             src={PUBLIC_URL + user.profilePicture}
-            alt="friend profile image"
+            alt="friend profile"
           />
           <span className="recent__friend-online"></span>
         </div>

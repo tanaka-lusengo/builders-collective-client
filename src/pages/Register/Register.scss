@@ -6,10 +6,10 @@
   margin-top: 1.25rem;
 
   &__layer {
-    margin: 0 auto;
+    margin: 0 auto 1.25rem;
     background-color: whitesmoke;
     box-shadow: 0rem 0.125rem 0.3125rem rgba(19, 24, 44, 0.1);
-    @include height-width(450px, 800px);
+    @include height-width(800px, 500px);
     @include flex(center, center, column);
   }
 
@@ -19,24 +19,9 @@
 
   &__sub-title-link {
     color: $secondaryCream;
-
-    &:after {
-      display: block;
-      content: "";
-      border-bottom: solid 0.125rem $secondaryCream;
-      transform: scaleX(0);
-      transition: transform 0.3s ease-in-out;
-      transform-origin: 50% 50%;
-    }
-
-    &:hover:after {
-      transform: scaleX(1);
-      transform-origin: 50% 50%;
-    }
   }
 
   &__form-layer {
-    display: flex;
     margin-bottom: 1.25rem;
   }
 
@@ -64,11 +49,42 @@
     border-bottom: 0.0625rem solid $secondaryAccent;
     cursor: pointer;
 
-    &:hover {
-      border-bottom: 0.0625rem solid $secondaryCream;
-    }
     &:focus {
       border-bottom: 0.0625rem solid $secondaryCream;
+    }
+  }
+}
+
+@include tablet {
+  .register {
+    &__layer {
+      @include height-width(450px, 800px);
+    }
+
+    &__sub-title-link {
+      &:after {
+        display: block;
+        content: "";
+        border-bottom: solid 0.125rem $secondaryCream;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+        transform-origin: 50% 50%;
+      }
+
+      &:hover:after {
+        transform: scaleX(1);
+        transform-origin: 50% 50%;
+      }
+    }
+
+    &__form-layer {
+      display: flex;
+    }
+
+    &__input {
+      &:hover {
+        border-bottom: 0.0625rem solid $secondaryCream;
+      }
     }
   }
 }

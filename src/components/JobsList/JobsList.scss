@@ -7,7 +7,7 @@
   border-bottom: 0.0625rem solid $primaryCream;
   border-radius: 0.3125rem;
   padding: 1.25rem;
-  margin-bottom: 0.125rem;
+  margin-bottom: 0.3125rem;
 
   &__job-title-employer-container {
     margin-bottom: 0.9375rem;
@@ -37,7 +37,6 @@
   }
 
   &__job-summary-container {
-    @include flex(space-between, center);
     margin-bottom: 0.625rem;
   }
 
@@ -51,5 +50,14 @@
 
   &__item {
     width: 9.375rem;
+    margin-bottom: 0.3125rem;
+  }
+}
+
+@include tablet {
+  .jobsList {
+    &__job-summary-container {
+      @include flex(space-between, center);
+    }
   }
 }
